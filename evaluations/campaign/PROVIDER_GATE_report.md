@@ -116,7 +116,7 @@ The previously sealed preregistration (`rbs_v4_benchmark_frozen-F.json`) specifi
 | Action | Status |
 |--------|--------|
 | Exposed key revocation (NVIDIA console) | **Required** — flagged for SENTINEL/NVIDIA action |
-| Key replacement in source | **DONE** — old key `REDACTED_NVIDIA_API_KEY-BAZR_qgbcEhoEw6KkNO7jAIoWtgr3RVcDnR` → new key `REDACTED_NVIDIA_API_KEY` in `src/arena/ablation_runner.py` (2 locations) and `scripts/smoke_llm_usage.py` |
+| Key replacement in source | **DONE** — old key `nvapi-[REDACTED-M0-C-2026-10-04]` → new key `nvapi-[REDACTED-M0-C-2026-10-04]` in `src/arena/ablation_runner.py` (2 locations) and `scripts/smoke_llm_usage.py` |
 | Manifest hash impact | **YES** — source file `src/arena/ablation_runner.py` hash changed; frozen manifest (`rbs_v4_benchmark_frozen-F.json`) must be updated on next freeze / SENTINEL approval |
 | Temp probe cleanup | **DONE** — all `*_probe_*.py`, `*_gateA*.py` files deleted; `.nvkey` deleted |
 
