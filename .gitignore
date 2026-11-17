@@ -116,3 +116,6 @@ src/raphael/data/
 # Note: nothing under these paths is tracked; ignore rules are preventive.
 data/
 src/orchestrator/data/
+
+# Local symlink to external repo (environment-specific)
+raphael-redteam

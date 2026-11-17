@@ -21,18 +21,20 @@ from datetime import datetime
 from typing import Optional
 from pathlib import Path
 
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
-
-from .case_api import router as case_router
-
-sys.path.insert(0, "/home/yaser/raphael-2.0/raphael")
-
 # AM-4 W-14 (R3.0-P23) weld dependency: broker mediation lives in the
 # canonical tree. Hard import (no fallback): the service fails closed at
 # startup when the canonical tree is absent.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+# Remove dead path - /home/yaser/raphael-2.0/raphael does not exist
+# sys.path.insert(0, "/home/yaser/raphael-2.0/raphael")
+
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+
+from case_api import router as case_router
+
 from orchestrator.auth import enforce_broker_mediation, WeldNotAuthorized
 
 from orchestrator.scanners.nmap_scanner import NmapScanner

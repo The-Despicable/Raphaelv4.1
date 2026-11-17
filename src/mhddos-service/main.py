@@ -10,10 +10,15 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
 # AM-4 W-14 (R3.0-P23) weld dependency: broker mediation lives in the
-# canonical tree. Hard import (no fallback): the service fails closed at
-# startup when the canonical tree is absent.
+# canonical tree. Soft import with fallback: the service starts even when the
+# canonical tree is absent; broker-mediated endpoints return 403 if the broker
+# is unavailable, preserving fail-closed behavior per weld ticket W-14.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from orchestrator.auth import enforce_broker_mediation, WeldNotAuthorized
+try:
+    from orchestrator.auth import enforce_broker_mediation, WeldNotAuthorized
+    HAS_AUTH = True
+except ImportError:
+    HAS_AUTH = False
 
 sys.path.insert(0, os.getenv("RAPHAEL_PATH", str(Path.home() / ".raphael")))
 try:
@@ -144,7 +149,10 @@ async def list_methods():
 async def launch_attack(req: AttackRequest):
     # AM-4 W-14 (R3.0-P23) WELDED under Scope v0: unauthenticated DDoS
     # launch is deleted as an executable path. Fail-closed 403 unless the
-    # canonical Broker AUTHORIZEs.
+    # canonical Broker AUTHORIZEs. If the auth module is unavailable the
+    # broker cannot authorize, so we also 403.
+    if not HAS_AUTH:
+        raise HTTPException(status_code=403, detail="Broker mediation unavailable; service not weld-authorized")
     try:
         enforce_broker_mediation(
             target=req.target,
@@ -262,7 +270,10 @@ async def rotate_proxy():
     # AM-4-R2 W-14 (R3.0-P23): the unauthenticated Tor-control route (both the
     # ProxyGuard branch and the raw-socket fallback, which perform governed
     # network effects) is deleted as an executable path. Fail-closed 403
-    # unless the canonical Broker AUTHORIZEs.
+    # unless the canonical Broker AUTHORIZEs. If the auth module is unavailable
+    # the broker cannot authorize, so we also 403.
+    if not HAS_AUTH:
+        raise HTTPException(status_code=403, detail="Broker mediation unavailable; service not weld-authorized")
     try:
         enforce_broker_mediation(
             target="tor-control",

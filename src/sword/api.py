@@ -4,12 +4,10 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional
 
-sys.path.insert(0, "/app")
-
 # AM-4 W-14 (R3.0-P23) weld dependency: broker mediation lives in the
 # canonical tree. Hard import (no fallback): the service fails closed at
 # startup when the canonical tree is absent.
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+sys.path.insert(0, "/home/yaser/raphael-2.0-rbsv2r/src")
 from orchestrator.auth import enforce_broker_mediation, WeldNotAuthorized
 
 from sword.pipeline import run_sword

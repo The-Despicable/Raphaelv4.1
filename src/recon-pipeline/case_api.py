@@ -11,7 +11,7 @@ from case_store import CaseStore, classify_type, generate_params_sig, extract_ur
 logger = logging.getLogger("case_api")
 router = APIRouter(prefix="/cases", tags=["cases"])
 
-DATA_DIR = Path("/data")
+DATA_DIR = Path(__file__).parent / "data"
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 def _get_store() -> CaseStore:

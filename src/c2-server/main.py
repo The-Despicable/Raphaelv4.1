@@ -1,6 +1,6 @@
 import sys, logging, uuid, time, os, ssl
 
-sys.path.insert(0, "/raphael")
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware

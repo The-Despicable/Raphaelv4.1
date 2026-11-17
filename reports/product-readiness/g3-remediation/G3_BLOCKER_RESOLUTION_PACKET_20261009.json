@@ -1,0 +1,347 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "non_authoritative_decision_packet",
+  "disclaimer": "Evidence and options for the operator and GLM. Accepts nothing, rules on nothing, ratifies nothing, promotes nothing. G3 remains NOT ACCEPTED; P4 and P10 remain unauthorized.",
+  "task": {
+    "name": "G3 blocker resolution and decision packet",
+    "date_utc": "2026-10-09",
+    "mode": "read-only investigation and decision preparation",
+    "tests_executed": false,
+    "full_suite_run": false,
+    "nested_arena_suite_run": false,
+    "source_code_modified": false,
+    "commits": 0,
+    "writes_performed": ["reports/product-readiness/g3-remediation/G3_BLOCKER_RESOLUTION_PACKET_20261009.md", "reports/product-readiness/g3-remediation/G3_BLOCKER_RESOLUTION_PACKET_20261009.json"],
+    "external_network": false,
+    "remote_fetch": false
+  },
+
+  "baseline": {
+    "divergence_detected": false,
+    "root": "/home/yaser/external-audits/raphael-2",
+    "branch": "governance/rsi-1-provenance-correction",
+    "head_sha": "fc3e2c132591eab7edaa12e97e13fe2d01619411",
+    "tree_sha": "e24d42bf7f7655293f3eb3a273c9ce4d94b1e061",
+    "commit_count": 188,
+    "head_subject": "RSI-1: add evidence-based historical split call-site adjudication package",
+    "head_date": "2026-10-09 11:15:51 +0000",
+    "remotes": ["origin", "canonical", "audit-target"],
+    "worktrees": 3,
+    "staged_changes": 0,
+    "tracked_modified": ["README.md", "evidence/DEFECT_REGISTER.md", "evidence/phases/P3_0_reinventory/WELD_SET.md"],
+    "unstaged_line_delta": "+193 / -23",
+    "untracked_count": 10,
+    "canonical_roadmap": "RAPHAEL_MASTER_ROADMAP_v4.2_RSI.md",
+    "roadmap_bytes": 133930,
+    "v5_roadmap_exists": false
+  },
+
+  "precedence": {
+    "source": "roadmap Appendix E",
+    "order": ["1 superseding ADR/governance ruling", "2 RAPHAEL MASTER ROADMAP v4.2", "3 v4.1 AM-1..AM-14", "4 earlier v4 wording", "5 historical audit reports/repository comments", "6 model suggestions"],
+    "superseding_adr_present": false,
+    "roadmap_added_by_commit": "69004a231",
+    "roadmap_added_date": "2026-10-07 13:48:49 +0000",
+    "roadmap_changed_since_addition": false,
+    "roadmap_adding_commit_scope": "321 files, +89523 / -135",
+    "observation": "the commit subject materially understates what 69004a231 did; commit subjects are not a reliable index for this repository"
+  },
+
+  "Q1_am4r3_provenance": {
+    "conclusion": "NO_EXECUTION_EVIDENCE_FOUND",
+    "scope_note": "conclusion applies to AM-4-R3 specifically; AM-4-R2 is separately and strongly evidenced",
+    "commit_search": {
+      "command": "git log --all --regexp-ignore-case --grep='AM-4-R3'",
+      "result": "no matches",
+      "label": "PROVEN"
+    },
+    "pickaxe_search": {
+      "command": "git log --all -S'AM-4-R3' --oneline",
+      "result": ["69004a231"],
+      "interpretation": "the only commit that changed the count of AM-4-R3 is the one that added the roadmap file itself",
+      "label": "PROVEN"
+    },
+    "tracked_content_search": {
+      "am4_r3_locations": "roadmap only (11 references) plus one reference in WELD_SET.md added by the prior remediation task",
+      "label": "PROVEN"
+    },
+    "am4_r2_evidence": {
+      "strength": "code-verified",
+      "examples": [
+        {"file": "src/orchestrator/chains/tool_registry.py", "lines": "57-93", "claim": "W-01 legacy asyncio.create_subprocess_exec body deleted; gate then unconditional raise", "label": "PROVEN"},
+        {"file": "src/agent/agent.py", "lines": "97-102, 115-120", "claim": "W-14 exec and uninstall branches deleted; raise WeldNotAuthorized", "label": "PROVEN"},
+        {"file": "src/orchestrator/sandbox/__init__.py", "lines": "34-46", "claim": "W-10 run_code gated then unconditional raise", "label": "PROVEN"}
+      ],
+      "unconditional_raise_sites": 14,
+      "files_carrying_them": 11,
+      "wording_collision_with_weld_set": "WELD_SET.md:41-45 says 'the gate is not blanket-deny'; on these 14 sites the outcome is always deny regardless of the Broker decision. Satisfies ADR-005 AM-4.2 (branch deleted) but the phrasing could be misread.",
+      "wording_collision_label": "INFERRED"
+    },
+    "numbering_systems": [
+      {"system": "AM-4 clauses", "range": "AM-4.1 .. AM-4.5", "source": "docs/adr/ADR-005-legacy-migration-seam.md:22-45"},
+      {"system": "AM-4 remediation revisions", "range": "AM-4-R2, AM-4-R3", "source": "roadmap:3501, 3622"},
+      {"system": "executor task IDs", "range": "Task 001, 001R2..001R6, 002", "source": "EFFECT_SCOPE_RULING_REQUEST.md:3; WELD_SET.md:181; P0_DIFF.md:61"}
+    ],
+    "task_001r_to_am4r3_mapping": {"exists_in_repository": false, "note": "nothing maps Task 001R* onto AM-4-R3; establishing such a mapping would be an authority act"},
+    "chronology": [
+      {"date": "pre", "sha": "7272880f7e...", "event": "P0 baseline, 17 SUB sites", "ref": "P0_DIFF.md:3-6"},
+      {"date": "2026-09-07 17:11", "sha": "ee9497289", "event": "G3 remediation: F1 fix + F2 perimeter record", "label": "PROVEN"},
+      {"date": "2026-09-07 17:14", "sha": "07fad8c1d", "event": "G3 STATUS: G3 NOT ACCEPTED", "ref": "evidence/g3_remediation/STATUS.md:17,54", "label": "REPORTED"},
+      {"date": "2026-09-07 17:47", "sha": "19121d7da", "event": "P3.11 §14.10 MVP evidence package (385 floor)", "label": "REPORTED"},
+      {"date": "2026-09-16 16:08", "sha": "3b2e22db3", "event": "P3.0 re-inventory (AM-1): 150-file census, W-01..W-15 welds, AM-4-R2 deletions", "label": "PROVEN"},
+      {"date": "2026-09-19", "sha": null, "event": "Roadmap v4.2 authored; AM-4-R3 NOT EXECUTED / G3 BLOCKED", "label": "REPORTED"},
+      {"date": "2026-09-29 19:19", "sha": "e6a8c707e", "event": "P0 snapshot before offensive restoration", "label": "PROVEN"},
+      {"date": "2026-10-07 13:48", "sha": "69004a231", "event": "Roadmap file added (321-file bulk import)", "label": "PROVEN"},
+      {"date": "2026-10-09 11:15", "sha": "fc3e2c132", "event": "Current HEAD", "label": "PROVEN"}
+    ],
+    "required_vs_found": [
+      {"required": "AM-4-R3 task packet", "found": "none in repository; roadmap asserts prompt EXISTS (line 3627)", "label": "NO_EXECUTION_EVIDENCE_FOUND"},
+      {"required": "AM-4-R3 execution record", "found": "none", "label": "PROVEN (absence)"},
+      {"required": "AM-4-R3 independent audit", "found": "none", "label": "PROVEN (absence)"},
+      {"required": "AM-4-R2 welds + deletions", "found": "code-verified across 14 sites / 11 files, plus 30+ documented references", "label": "PROVEN"}
+    ],
+    "minimum_missing_artifact": "the AM-4-R3 task packet",
+    "minimum_required_ruling": "whether AM-4-R2's verified work discharges the AM-4-R3 obligation - answerable only once the packet scope is known"
+  },
+
+  "Q2_census_reconciliation": {
+    "conclusion": "NO_CONFLICT_EXISTS",
+    "supersedes_prior_report_finding": true,
+    "prior_report_finding": "78-file relabelling inconsistency between WELD_SET.md U-3 and F2_PERIMETER_RECORD.md 001R6",
+    "root_cause_of_apparent_conflict": "revision/scope misreading - F2 record 001R2 describes a 140-file census, not the 150-file census",
+    "claims_verbatim": {
+      "F2_001R2_line82": "Census (001R2): 140 files - 68 not-yet-mediated files - 6 mediated - 5 reachable notes - 61 dead.",
+      "F2_001R6_line49": "(001R6 supersedes: census 149 -> 150, WELD_SET section U-3 -> 150 - 78/6/4/62.)",
+      "WELD_SET_U3_lines193_196": "full 150-file effect census reconciled (78 welded files - 6 mediated - 4 reachable notes - 62 dead). (AM-4 note: the 78 formerly not-yet files now read Pxx welded.)"
+    },
+    "arithmetic": [
+      {"record": "001R2", "census_size": 140, "buckets": [68, 6, 5, 61], "sum": 140, "valid": true},
+      {"record": "001R6", "census_size": 150, "buckets": [78, 6, 4, 62], "sum": 150, "valid": true},
+      {"record": "U-3", "census_size": 150, "buckets": [78, 6, 4, 62], "sum": 150, "valid": true}
+    ],
+    "empirical_tally_of_CENSUS_md": {
+      "method": "grep on the final classification column of CENSUS.md",
+      "numbered_rows": 150,
+      "welded": 78,
+      "mediated": 6,
+      "notes": 4,
+      "dead": 62,
+      "total": 150,
+      "consistent": true,
+      "label": "PROVEN"
+    },
+    "live_not_yet_labels_in_census": 0,
+    "not_yet_occurrences_are_historical_narrative": [18, 203],
+    "timing": {
+      "CENSUS_md_last_touched": "69004a231 (2026-10-07)",
+      "F2_PERIMETER_RECORD_last_touched": "e6a8c707e (2026-09-29)",
+      "census_is_newer": true,
+      "label": "PROVEN"
+    },
+    "what_remains_open": {
+      "issue": "welded is a recorded label, not an independently verified security property",
+      "requires": "roadmap §14.12 authority review",
+      "label": "UNKNOWN"
+    },
+    "residual_risk": {
+      "issue": "deadness partly established by import failure",
+      "evidence": "evidence/DEFECT_REGISTER.md DR-001 - sword.phase_2_exploit fails to import, 1 of 19 fresh-process import failures",
+      "risk": "repairing an import could resurrect an unmediated primitive",
+      "label": "REPORTED"
+    },
+    "security_implications": {
+      "if_78_welded": "largest legacy surface is Broker-gated; residual risk concentrates in the 62 dead rows",
+      "if_78_not_welded": "78 files with live primitives outside the Broker; would block G3 outright",
+      "current_reading": "78 welded"
+    }
+  },
+
+  "Q3_effect_sizes": {
+    "published_claims_traced": 8,
+    "all_trace_to": "rbs_v4_holdout.jsonl + frozen v2.1.1 instrument",
+    "any_verifiable_now": false,
+    "dataset": {"path": "evaluations/campaign/rbs_v4_holdout.jsonl", "status": "MISSING from tree and git", "gitignore_rule": ".gitignore:87 evaluations/campaign/*.jsonl", "classification": "UNVERIFIABLE", "label": "PROVEN"},
+    "instrument": {"classification": "UNVERIFIABLE_DRIFT", "declared_commit": "74e52eddff698919e5776d8b6cb1ee75dc3159f8", "commit_resolves": false, "tag_present": false, "digest_match": 4, "digest_mismatch": 5, "canonical_pdp_drifted": true, "label": "PROVEN"},
+    "pinned_anchor": {"intact": true, "digest": "c26ed773ba57d43d53e150acb90db8299aa565f9ea7b2646a7820aa2c9775757", "modified_by_any_task": false, "label": "PROVEN"},
+    "manifest_internal_conflict": {"dataset_block": "Campaign B, 1200 rows, Aug-7 window, sha256 2bf614f8", "design_block": "Campaign A, 3240 runs, seeds 1072-1101", "verification_block": "gate PASS 3240/3240 run 2026-08-05T23:23:13Z, ~1.5 days before the declared dataset start", "label": "PROVEN"},
+    "second_independent_problem": {
+      "source": "evaluations/campaign/FINAL_VERDICT_RECORD.md (2026-08-08, Authority: SENTINEL GLM-5.2)",
+      "status_line": "PROJECT FROZEN - INCONCLUSIVE",
+      "not_supported": ["Raphael is superior to strong prompting", "Strong prompting is inferior", "Architecture is necessary"],
+      "publication_restriction": "No terminal superiority claim may be published or acted upon.",
+      "asserted_tag": "raphael-terminal-freeze-inconclusive",
+      "asserted_tag_exists_locally": false,
+      "local_tags": ["raphael-orphan-phase12-preserved", "raphael-p0-baseline-7272880f", "raphael-p1-post-migration-7272880f", "raphael-p1-pre-migration-7272880f", "raphael-p14.5-baseline"],
+      "tag_remote_status": "UNKNOWN (no fetch performed)",
+      "label": "PROVEN for local absence"
+    },
+    "two_axes": {
+      "provenance": {"question": "can the numbers be verified?", "state": "No"},
+      "interpretation": {"question": "may the numbers be published/acted on?", "state": "Restricted by the project's own verdict for the central thesis; internal ablations fall under 'Supported' as recorded"}
+    },
+    "readme_already_carries_interpretation_caveat": "README.md:204 - Central thesis remains UNRESOLVED due to instrument defects",
+    "reproducible_now": "none of the listed effect sizes",
+    "unverifiable_now": "all 7 README rows plus the FINAL_VERDICT_RECORD figure",
+    "options": [
+      {"id": "OPT-A", "option": "retain figures, caveats strengthened", "reversible": true, "authority": "operator + GLM", "evidence_required": "none beyond current"},
+      {"id": "OPT-B", "option": "retain and formally downgrade to historical/unverifiable with a machine-readable marker", "reversible": true, "authority": "operator", "evidence_required": "a classification record analogous to HOLDOUT_CLASSIFICATION_20261009.json"},
+      {"id": "OPT-C", "option": "withdraw effect sizes from user-facing surfaces, retain internally with provenance header", "reversible": true, "authority": "operator + GLM", "risk": "may be read as admitting falsity, which the evidence does NOT establish"},
+      {"id": "OPT-D", "option": "authorize provenance recovery outside the repository, then re-decide", "reversible": null, "authority": "operator"},
+      {"id": "OPT-E", "option": "re-establish later via a fresh fully-bound campaign under a new measurement contract", "reversible": null, "authority": "operator + GLM after G8"}
+    ],
+    "prohibited": ["recalculate effects", "rerun the campaign to regenerate the missing file", "manufacture substitute values", "edit the pinned anchor"],
+    "decision_record_applies": null,
+    "decision_record_gap": {
+      "existing_records": ["GD-2026-10-09-01 holdout-provenance-recovery", "GD-2026-10-09-02 policy-identity-mode", "GD-2026-10-09-03 denominator-and-exclusion-semantics", "GD-2026-10-09-04 configuration-adoption-authority", "GD-2026-10-09-05 statistical-policy", "GD-2026-10-09-06 snapshot-and-replay-semantics"],
+      "covers_effect_size_publication": false,
+      "note": "GD-01 is adjacent (dataset recoverability) but does not address publication of already-published figures",
+      "action_taken": "gap reported, not filled; no record created; nothing adopted"
+    }
+  },
+
+  "Q4_test_floor": {
+    "figure_count": 7,
+    "prior_report_said": 6,
+    "figures": [
+      {"n": 357, "source": "RAPHAEL_STATE.md:10", "revision": null, "distance_to_head": null, "interpreter": null, "in_declared_range": null, "transcript": false, "label": "REPORTED"},
+      {"n": 369, "source": "evidence/g3_remediation/STATUS.md:23", "revision": "07fad8c1", "distance_to_head": 39, "interpreter": "3.14.4", "in_declared_range": false, "transcript": true, "transcript_tail": "369 passed, 32 warnings in 21.09s", "label": "REPORTED"},
+      {"n": 385, "source": "evidence/p311_mvp/P311_EVIDENCE.md:88", "revision": "fc83a6179", "distance_to_head": 37, "interpreter": "3.14.4", "in_declared_range": false, "transcript": true, "transcript_tail": "385 passed, 33 warnings in 11.99s", "clean_checkout_corroboration": "385 passed, 33 warnings in 14.03s", "label": "REPORTED"},
+      {"n": 552, "source": "evidence/g3_remediation/F2_PERIMETER_RECORD.md:31", "revision": "001R6 era", "distance_to_head": null, "interpreter": null, "in_declared_range": null, "transcript": false, "label": "REPORTED"},
+      {"n": 621, "source": "REVIEWER_GUIDE.md:28", "revision": null, "distance_to_head": null, "interpreter": "3.14.4", "in_declared_range": false, "transcript": false, "note": "the file itself states the frozen pin is NOT satisfiable", "label": "REPORTED"},
+      {"n": 1218, "source": "reports/RAPHAEL_BLOCKER_RESOLUTION_REPORT_2026-10-09.md:22,110,122,374", "revision": "c1eab3dd2 era", "distance_to_head": null, "interpreter": "3.12.15", "in_declared_range": true, "transcript": false, "label": "REPORTED"},
+      {"n": 1318, "source": "evidence/phase3_readiness/REMEDIATION_MANIFEST.json:13", "revision": "1fd7cda76", "declared_tree": "49237b06", "tree_verified_by_git_rev_parse": true, "distance_to_head": 8, "interpreter": "3.12.15", "pytest": "9.1.1", "in_declared_range": true, "transcript": true, "transcript_tail": "1318 passed, 44 warnings in 103.38s", "caveat": "transcript contains CUDA driver-mismatch warning (driver too old, found 12080); torch fell back", "label": "REPORTED"}
+    ],
+    "findings": [
+      {"finding": "no figure describes HEAD fc3e2c132", "label": "PROVEN"},
+      {"finding": "the two strongest figures (369, 1318) disagree on interpreter, revision and duration", "label": "PROVEN"},
+      {"finding": "three of four transcript-backed runs used Python 3.14.4, outside the declared >=3.11,<3.13", "label": "PROVEN"},
+      {"finding": "the 1318 tree binding is independently verifiable and correct", "label": "PROVEN"},
+      {"finding": "a prior task collected 1509 tests at HEAD-with-uncommitted-changes; that is a COLLECTION count, not a pass count, includes 57 tests from then-untracked files, and is not comparable to any figure above", "label": "REPORTED", "reproduced_this_task": false}
+    ],
+    "authoritative_figure_exists": false,
+    "validation_protocol": {
+      "executed": false,
+      "requires_authorization": true,
+      "baseline_commit": "fc3e2c132591eab7edaa12e97e13fe2d01619411",
+      "baseline_tree": "e24d42bf7f7655293f3eb3a273c9ce4d94b1e061",
+      "interpreter_requirement": "satisfy pyproject requires-python >=3.11,<3.13; use 3.12.x (3.12.15 already demonstrated)",
+      "open_decision": "whether the run includes the prior task's uncommitted files (57 untracked tests)",
+      "environment_fingerprint": ["python -VV", "interpreter executable sha256", "pip freeze", "lockfile state (currently none)", "uname -a", "cpu/ram/gpu + driver version", "git rev-parse HEAD HEAD^{tree}", "git status --porcelain", ".env variable NAMES only, never values"],
+      "commands": [
+        "git ls-files > tracked.txt",
+        "xargs -a tracked.txt -d '\\n' sha256sum > BEFORE.sha256",
+        "PYTHONPATH=src python -m pytest tests/ --collect-only -q",
+        "PYTHONPATH=src python -m pytest tests/ -q --no-header",
+        "PYTHONPATH=src python -m pytest tests/test_p2_guardrail_*.py -q --no-header",
+        "xargs -a tracked.txt -d '\\n' sha256sum > AFTER.sha256",
+        "diff <(sort BEFORE.sha256) <(sort AFTER.sha256)"
+      ],
+      "inclusion_policy": "tests/ only; testpaths=['tests'] already excludes src/arena/tests - state the exclusion explicitly; src/arena/tests is OUT OF SCOPE for the floor and needs separate authorization",
+      "distinct_fields_required": ["collected", "passed", "failed", "skipped", "errors", "warnings", "duration"],
+      "capture_required": ["exact command line", "working directory", "exit code", "UTC start/end timestamps", "full stdout", "full stderr", "host and interpreter fingerprint"],
+      "independent_verification": ["second party re-runs fingerprints and confirms BEFORE/AFTER match the submitted manifest byte-for-byte", "second party re-derives git rev-parse HEAD^{tree}", "AM-6: weakening/skipping/xfailing a retained test is evidence tampering and an automatic gate failure"],
+      "protected_trees": ["arena/results/", "src/arena/results/", "src/arena/arena/results/", "evidence/"],
+      "protected_scope_recommendation": "extend to all 67641 tracked files, as the prior task did",
+      "nested_suite_isolation": ["disposable worktree via git worktree add --detach, never the primary worktree", "hash before/after", "git worktree remove and verify git worktree list restored", "the four legacy failures are REPORTED, not fixed; a nested run is a separate authorization"],
+      "stop_conditions": ["unexpected change to any tracked file", "working tree not clean or not fully enumerated", "interpreter outside >=3.11,<3.13", "non-zero exit with an environmental cause (import/GPU/network) recorded as environment not test result", "elapsed time exceeds a pre-declared budget", "never fix a failure by editing a test"],
+      "failure_recording": "warnings verbatim, including the pre-existing SyntaxWarning at src/orchestrator/capabilities/interactive_shell/capability.py:141; environment problems labelled separately from assertion failures; no captured output edited after the fact",
+      "authoritative_floor_criteria": [
+        "transcript exists with exit code and timestamps",
+        "bound to a specific commit AND tree SHA, verified with git rev-parse",
+        "interpreter satisfies the declared range",
+        "full environment fingerprint captured",
+        "collected/passed/failed/skipped/errors reported as distinct fields",
+        "BEFORE.sha256 identical to AFTER.sha256 across all protected trees",
+        "describes the current baseline tree, or names its delta explicitly",
+        "independently re-verified"
+      ],
+      "figures_meeting_all_criteria_today": 0,
+      "closest_candidate": "1318 (fails criterion 7: 8 commits behind; and its transcript carries the CUDA warning)"
+    },
+    "fingerprint_safeguard_review": {
+      "file": "src/arena/tests/conftest.py",
+      "modified_this_task": false,
+      "method": "(size, mtime_ns) per file over 4 protected trees, session-scoped",
+      "demonstrated_to_detect": "yes - planted write in a disposable worktree caused a session error naming the exact path",
+      "can_substitute_for_content_hashes": false,
+      "verdict": "adequate fast in-suite tripwire; NOT an integrity proof",
+      "evasion_modes": [
+        "any write restoring the original mtime_ns (os.utime, shutil.copy2, rsync -t, cp -p, VCS checkout, backup tool) is invisible",
+        "coarse filesystem mtime granularity can miss a same-size rewrite",
+        "only compares before/after within one session; modifications before session start are not detected"
+      ],
+      "false_positive_mode": "unrelated backup/sync/git touching mtime fails the session despite byte-identical content",
+      "coverage_gap": "does not guard evaluations/, failures/, baseline/, Report_Raphael/, policies/, configs/, or the rest of the tracked tree",
+      "required_measure": "external SHA-256 manifest taken before and after, per the validation protocol",
+      "label": "PROVEN for stated behaviour; INFERRED for evasion properties (not exploited here)"
+    }
+  },
+
+  "additional_blockers": [
+    {"id": "B1", "item": "roadmap §14.12 ten attack classes - no recorded GLM adversarial review", "newer_evidence_resolves": "partially", "detail": "automated probes exist: tests/test_p311_adversarial_probes.py, 13 tests mapped to the 10 categories (P311_EVIDENCE.md:63-81), transcript p311_targeted_transcript.txt '13/13 probes green'; the AUTHORITY review has not occurred", "blocks_g3_submission": true, "roadmap_basis": "§14.12 - G3 passes only when these attempts fail according to policy and leave traceable evidence; GLM must actively attempt", "label": "probes IMPLEMENTED; review PROVEN absent"},
+    {"id": "B2", "item": "roadmap §14.11 eight MVP failure criteria", "newer_evidence_resolves": "more than previously reported", "detail": "P311_EVIDENCE.md:55-61 maps all 8 to named tests, '8/8 PROVEN', criterion 5 via clean worktree", "blocks_g3_submission": true, "roadmap_basis": "§14.11", "label": "REPORTED", "supersedes_prior_report": true},
+    {"id": "B3", "item": "pinned instrument unavailable / drifted", "newer_evidence_resolves": false, "blocks_g3_submission": true, "roadmap_basis": "G4 provenance; §14 evidence chain", "label": "PROVEN"},
+    {"id": "B4", "item": "holdout dataset missing / unverifiable", "newer_evidence_resolves": false, "blocks_g3_submission": true, "roadmap_basis": "§14.11/§14.12 evidence; G8", "label": "PROVEN"},
+    {"id": "B5", "item": "six governance decisions PROPOSED", "newer_evidence_resolves": false, "blocks_g3_submission": false, "blocks_g4_g8": true, "roadmap_basis": "G4 ledger criterion", "label": "PROVEN"},
+    {"id": "B6", "item": "ADR-011 numbering duplicated", "newer_evidence_resolves": false, "blocks_g3_submission": false, "note": "ADR-013 taken as next free number; 68 textual references to ADR-011", "roadmap_basis": "precedence level 1 integrity", "label": "PROVEN"},
+    {"id": "B7", "item": "license / authorized-use posture", "newer_evidence_resolves": false, "blocks_g3_submission": false, "blocks_distribution": true, "note": "outside roadmap G3 scope", "label": "PROVEN"},
+    {"id": "B8", "item": "P4/RSI freeze notice ACTIVE", "newer_evidence_resolves": true, "blocks_g3_submission": true, "note": "present and correct; lifts only on a G3 ruling", "roadmap_basis": "§36, §37, Appendix D", "label": "IMPLEMENTED"}
+  ],
+
+  "prior_gate_status": {
+    "G0": {"status": "PASS (historical)", "cited_artifact": null, "label": "REPORTED"},
+    "G1": {"status": "PASS (historical)", "cited_artifact": null, "label": "REPORTED"},
+    "G2": {"status": "PASS", "cited_authority": "GLM G3 entry adjudication (cited in evidence/phases/P3_0/EVIDENCE.md:16)", "cited_artifact": null, "label": "REPORTED"},
+    "G3": {"status": "NOT ACCEPTED", "acceptance_artifact_exists": false, "search_result": "only F2_PERIMETER_RECORD.md matches a G3-PASS phrase, and it occurs in a NEGATION", "label": "PROVEN (absence)"}
+  },
+
+  "decisions": [
+    {"id": "D-1", "question": "What did AM-4-R3 require, and does the verified AM-4-R2 work discharge it?", "options": ["supply the packet", "rule that R2 discharges R3", "rule it does not and issue R3"], "authority": "operator (packet) + GLM (ruling)", "next_action": "operator produces the packet; GLM rules"},
+    {"id": "D-2", "question": "Is CENSUS.md (78/6/4/62) the authoritative current classification?", "options": ["accept", "order re-derivation"], "authority": "GLM", "next_action": "GLM accepts or orders re-derivation", "note": "now empirically evidenced"},
+    {"id": "D-3", "question": "Is 'dead-by-import-failure' equivalent to deleted for perimeter purposes?", "options": ["yes", "no - require zero-import proof for P9"], "authority": "GLM", "next_action": "GLM rules"},
+    {"id": "D-4", "question": "Do the published effect-size claims stand, get caveated, or get withdrawn?", "options": ["OPT-A", "OPT-B", "OPT-C", "OPT-D", "OPT-E"], "authority": "operator + GLM", "next_action": "create a decision record; ratify through the registry"},
+    {"id": "D-5", "question": "Does the missing raphael-terminal-freeze-inconclusive tag need recreating?", "options": ["recreate locally", "leave absent and annotate"], "authority": "operator", "next_action": "operator decides (history-rewrite risk)"},
+    {"id": "D-6", "question": "Which single figure is the authoritative floor?", "options": ["none currently qualify; run the §7.2 protocol first"], "authority": "operator (authorize run)", "next_action": "authorize the validation run"},
+    {"id": "D-7", "question": "Should the floor run include the prior task's uncommitted files?", "options": ["commit or shelve first", "run as-is and document"], "authority": "operator", "next_action": "decide before any run"},
+    {"id": "D-8", "question": "Ratify or reject the six PROPOSED decisions", "options": ["ratify", "reject", "defer"], "authority": "operator", "next_action": "ratify through the registry"},
+    {"id": "D-9", "question": "Resolve the ADR-011 numbering collision", "options": ["renumber and update 68 references", "accept ambiguity and document"], "authority": "GLM", "next_action": "GLM decides"},
+    {"id": "D-10", "question": "Is a G3 ruling issued?", "options": ["n/a until D-1, D-2, D-3, D-6 close"], "authority": "GLM", "next_action": "after the above"}
+  ],
+
+  "dependency_graph": {
+    "critical_path_a": ["D-7", "D-6", "FLOOR"],
+    "critical_path_b": ["operator produces AM-4-R3 packet", "D-1", "G3 PACKAGE"],
+    "independent_and_can_run_now": ["D-2", "D-3", "D-9"],
+    "final_steps": ["§14.12 GLM adversarial review", "D-10 G3 ruling"]
+  },
+
+  "missing_inputs": [
+    {"missing": "AM-4-R3 task packet", "holder": "operator / v4.1 arbitration", "consequence": "D-1 unanswerable; the G3 package's central claim cannot be assessed"},
+    {"missing": "GLM G3 acceptance ruling", "holder": "GLM", "consequence": "G3 stays NOT ACCEPTED"},
+    {"missing": "raphael-terminal-freeze-inconclusive tag (if it exists)", "holder": "operator", "consequence": "D-5 unanswerable; verdict-record integrity gap remains"},
+    {"missing": "lockfile / dependency pin", "holder": "engineering + operator", "consequence": "floor not reproducible across machines; §7.2 fingerprint weaker than it should be"}
+  ],
+
+  "readiness_conclusion": {
+    "is_a_g3_submission": false,
+    "gate_accepted": false,
+    "p4_authorized": false,
+    "p10_entered": false,
+    "true_blockers_to_submission": ["D-1 (AM-4-R3 packet + ruling)", "D-6 (authoritative floor)", "roadmap §14.12 GLM adversarial review"],
+    "decisions_closable_without_further_investigation": ["D-2", "D-3", "D-4", "D-5", "D-8", "D-9"],
+    "corrections_to_prior_reports": [
+      {"target": "78-file census inconsistency", "correction": "no inconsistency exists; revision/scope misreading; numbers agree and CENSUS.md empirically confirms 78/6/4/62", "label": "PROVEN"},
+      {"target": "§14.11 evidence", "correction": "previously 'not established'; P311_EVIDENCE.md provides named-test mappings, 8/8 transcript-backed, clean-checkout reproduction", "label": "REPORTED"},
+      {"target": "§14.12 evidence", "correction": "previously 'NOT PERFORMED'; 13 automated probes exist and are transcript-backed; the missing item is the AUTHORITY review", "label": "REPORTED"},
+      {"target": "floor figure count", "correction": "seven figures, not six (385 was missed)", "label": "PROVEN"}
+    ],
+    "confidence": {
+      "Q1": "high - directly reproducible from committed objects and files",
+      "Q2": "high - empirical tally of CENSUS.md plus git last-touch dates",
+      "Q3_provenance": "high",
+      "Q3_interpretation": "medium - turns on the absent tag and the unreviewed remote",
+      "Q4": "high - transcripts and git ancestry directly readable",
+      "conclusion_depends_on_executing_any_test": false
+    }
+  }
+}

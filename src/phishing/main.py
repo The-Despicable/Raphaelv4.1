@@ -41,7 +41,7 @@ from orchestrator.phishing.set_wrapper import SETWrapper
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 logger = logging.getLogger("phishing")
 
-TEMPLATE_DIR = Path(os.environ.get("TEMPLATE_DIR", "/app/templates"))
+TEMPLATE_DIR = Path(os.environ.get("TEMPLATE_DIR", "/tmp/raphael-app/templates"))
 
 gophish = GoPhishAPI()
 evilginx = EvilGinx()

@@ -1,0 +1,622 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "non_authoritative_authorization_request",
+  "disclaimer": "Preparation and authorization support. Nothing here has been executed. No test was run during this task. This document asks the operator for authorization; it does not grant it.",
+  "gate_state": {
+    "G3": "NOT ACCEPTED",
+    "P4": "NOT AUTHORIZED",
+    "P10": "NOT AUTHORIZED",
+    "p4_rsi_freeze_notice": "ACTIVE",
+    "label": "PROVEN"
+  },
+
+  "task": {
+    "name": "G3 test-floor authorization request and execution preflight",
+    "date_utc": "2026-10-09",
+    "mode": "preparation only",
+    "tests_executed": false,
+    "full_suite_run": false,
+    "nested_arena_suite_run": false,
+    "benchmarks_run": false,
+    "docker_started": false,
+    "network_operations": false,
+    "dependencies_installed": false,
+    "source_code_modified": false,
+    "commits": 0,
+    "writes_performed": [
+      "reports/product-readiness/g3-remediation/G3_TEST_FLOOR_AUTHORIZATION_REQUEST_20261009.md",
+      "reports/product-readiness/g3-remediation/G3_TEST_FLOOR_AUTHORIZATION_REQUEST_20261009.json"
+    ]
+  },
+
+  "baseline": {
+    "divergence_detected": false,
+    "root": "/home/yaser/external-audits/raphael-2",
+    "branch": "governance/rsi-1-provenance-correction",
+    "head_sha": "fc3e2c132591eab7edaa12e97e13fe2d01619411",
+    "tree_sha": "e24d42bf7f7655293f3eb3a273c9ce4d94b1e061",
+    "commit_count": 188,
+    "staged_changes": 0,
+    "requires_python": ">=3.11,<3.13",
+    "label": "PROVEN",
+    "actions_not_taken": ["reset", "clean", "switch branches", "stash", "commit", "push", "substitute another revision"]
+  },
+
+  "worktrees": [
+    {"path": "/home/yaser/external-audits/raphael-2", "head": "fc3e2c132", "branch": "governance/rsi-1-provenance-correction", "role": "primary"},
+    {"path": "/home/yaser/audit-rsi1/ratification-wt", "head": "fc3e2c132", "branch": "governance/rsi-1-operator-ratification-draft", "role": "pre-existing, untouched"},
+    {"path": "/tmp/rbase-b6ef24", "head": "b6ef24bdb", "branch": "detached", "role": "pre-existing stale/prunable", "note": "deliberately NOT pruned"}
+  ],
+
+  "local_changes": {
+    "modified_tracked_count": 3,
+    "modified_tracked_files": ["README.md", "evidence/DEFECT_REGISTER.md", "evidence/phases/P3_0_reinventory/WELD_SET.md"],
+    "aggregate_line_delta": "+193 / -23",
+    "untracked_status_entries": 10,
+    "untracked_individual_files": 26,
+    "counting_discrepancy": {
+      "prior_report_stated": "ten newly created files or directories",
+      "actual_status_entries": 10,
+      "actual_individual_files": 26,
+      "cause": "git collapses directories into one status entry",
+      "is_new_drift": false,
+      "verification_command": "git status --porcelain --untracked-files=all",
+      "label": "PROVEN"
+    },
+    "files_after_this_task": {"untracked_individual_files": 28, "untracked_status_entries": 12},
+    "label": "PROVEN"
+  },
+
+  "governance_state": {
+    "governance_registry": {"path": "evidence/GOVERNANCE_DECISIONS_20261009.jsonl", "records": 6, "all_status_proposed": true, "all_authority_principal_empty": true, "all_decided_at_empty": true, "adopted": 0, "label": "PROVEN"},
+    "g3_acceptance_artifact_exists": false,
+    "freeze_notice": {"path": "evidence/governance/P4_RSI_FREEZE_NOTICE_20261009.md", "status": "ACTIVE", "label": "IMPLEMENTED"}
+  },
+
+  "pytest_configuration": {
+    "testpaths": ["tests"],
+    "pythonpath": ["src"],
+    "asyncio_mode": "auto",
+    "asyncio_default_fixture_loop_scope": "function",
+    "note": "testpaths=['tests'] already excludes src/arena/tests from a bare pytest invocation; the protocol must make that exclusion an explicit recorded decision",
+    "label": "PROVEN"
+  },
+
+  "suite_sizes": {
+    "tests_on_disk_py_files": 77,
+    "tests_committed_py_files": 75,
+    "untracked_test_files_excluded_from_baseline": ["tests/test_rsi1_governance_registry.py", "tests/test_rsi1_governance_registry_adversarial.py"],
+    "untracked_governance_test_count": 57,
+    "nested_arena_committed_py_files": 6,
+    "guardrail_test_files": 10,
+    "label": "PROVEN"
+  },
+
+  "historical_figures": {
+    "count": 7,
+    "figures": [
+      {"n": 357, "source": "RAPHAEL_STATE.md:10", "revision": null, "distance_to_head": null, "interpreter": null, "transcript": false, "label": "REPORTED", "limitation": "no revision, no interpreter, no transcript"},
+      {"n": 369, "source": "evidence/g3_remediation/STATUS.md:23", "revision": "07fad8c1", "distance_to_head": 39, "interpreter": "3.14.4", "in_range": false, "transcript": true, "transcript_tail": "369 passed, 32 warnings in 21.09s", "label": "REPORTED"},
+      {"n": 385, "source": "evidence/p311_mvp/P311_EVIDENCE.md:88", "revision": "fc83a6179", "distance_to_head": 37, "interpreter": "3.14.4", "in_range": false, "transcript": true, "transcript_tail": "385 passed, 33 warnings in 11.99s", "clean_checkout_corroboration": "385 passed, 33 warnings in 14.03s", "label": "REPORTED"},
+      {"n": 552, "source": "evidence/g3_remediation/F2_PERIMETER_RECORD.md:31", "revision": "001R6 era", "distance_to_head": null, "interpreter": null, "transcript": false, "label": "REPORTED", "limitation": "prose assertion only"},
+      {"n": 621, "source": "REVIEWER_GUIDE.md:28", "revision": null, "distance_to_head": null, "interpreter": "3.14.4", "in_range": false, "transcript": false, "label": "REPORTED", "limitation": "the file itself states the frozen pin is NOT satisfiable"},
+      {"n": 1218, "source": "reports/RAPHAEL_BLOCKER_RESOLUTION_REPORT_2026-10-09.md:22,110,122,374", "revision": "c1eab3dd2 era", "distance_to_head": null, "interpreter": "3.12.15", "in_range": true, "transcript": false, "label": "REPORTED"},
+      {"n": 1318, "source": "evidence/phase3_readiness/REMEDIATION_MANIFEST.json:13", "revision": "1fd7cda76", "declared_tree": "49237b06", "tree_verified": true, "distance_to_head": 8, "interpreter": "3.12.15", "pytest": "9.1.1", "in_range": true, "transcript": true, "transcript_tail": "1318 passed, 44 warnings in 103.38s", "caveat": "transcript records NVIDIA driver too old (found version 12080)", "label": "REPORTED"}
+    ],
+    "cross_cutting_limitations": [
+      {"finding": "no figure describes HEAD fc3e2c132", "label": "PROVEN"},
+      {"finding": "three of four transcript-backed runs used Python 3.14.4, outside >=3.11,<3.13", "label": "PROVEN"},
+      {"finding": "hardware changed since the 1318 run: transcript records driver version 12080, current host reports 573.71 (GeForce MX130); 1318 is not reproducible on this machine as currently configured", "recorded_values_label": "PROVEN", "version_mapping_label": "INFERRED"},
+      {"finding": "a prior task collected 1509 tests - a COLLECTION count, including 57 tests from then-untracked files; not comparable to any figure; not reproduced in this task", "label": "REPORTED", "reproduced_this_task": false}
+    ],
+    "figures_meeting_all_eight_criteria": 0,
+    "floor_designated": false
+  },
+
+  "decision_A": {
+    "id": "DEC-A",
+    "question": "Which repository state should the floor describe?",
+    "options": [
+      {
+        "id": "A",
+        "name": "Committed baseline (disposable detached worktree)",
+        "method": "git worktree add --detach <path> fc3e2c132; run there",
+        "advantages": ["unambiguous commit AND tree identity resolvable by a reviewer", "clean checkout reproduces exactly what a clone gives", "26 untracked remediation files structurally excluded, so the count is not polluted", "easiest independent re-verification"],
+        "limitations": ["does not validate the governance registry, the 57 new governance tests, ADR-013, the freeze notice, or documentation edits", "those remain unmeasured until a separate candidate run"]
+      },
+      {
+        "id": "B",
+        "name": "Remediation candidate",
+        "method": "validate a separately identified candidate containing the remediation changes",
+        "advantages": ["measures the candidate that includes the latest governance work"],
+        "limitations": ["an uncommitted candidate has NO git tree SHA", "requires either operator-authorized commit of the candidate, or a manifest-defined identity with no VCS revision", "without one of those the floor is not independently reproducible", "comparison against historical counts requires an explicit scope-difference statement"]
+      }
+    ],
+    "recommendation": "Option A for the authoritative floor; Option B as a separate validation target. Do not combine their counts.",
+    "recommendation_rationale": "the purpose is reproducible AM-8 evidence; an unambiguous tree SHA is worth more than coverage of uncommitted work; combining a 75-file count with a 77-file count would describe neither",
+    "commits_or_stashes_required": false,
+    "decision_state": "PENDING_OPERATOR_DECISION",
+    "label": "IMPLEMENTED"
+  },
+
+  "decision_B": {
+    "id": "DEC-B",
+    "question": "Which suites are included?",
+    "inclusion_policy": [
+      {"id": "B1", "suite": "configured root suite tests/", "committed_files": 75, "in_floor": true, "rationale": "this is the AM-8 object; testpaths already scopes it", "label": "PROVEN"},
+      {"id": "B2", "suite": "guardrail suites tests/test_p2_guardrail_*.py", "files": 10, "in_floor": false, "run_separately": true, "rationale": "strict subset of tests/, already counted in the root figure; a second number must never be added to the first", "label": "PROVEN"},
+      {"id": "B3", "suite": "nested Arena suite src/arena/tests", "committed_files": 6, "in_floor": false, "run_in_primary_worktree": false, "rationale": "separate authorization required; contamination risk documented in evidence/arena_contamination_20261004/README.md (14 directories rewritten 2026-10-04); four legacy failures REPORTED not fixed", "label": "REPORTED"}
+    ],
+    "collection_vs_execution": {
+      "distinct_phases": [
+        {"phase": "collection", "command_class": "--collect-only -q", "yields": "collected count + collection errors", "is_a_floor": false},
+        {"phase": "execution", "command_class": "-q", "yields": "passed/failed/skipped/errored/warnings/duration", "is_a_floor": true},
+        {"phase": "guardrail (optional)", "yields": "own five counts + exit code", "is_a_floor": false},
+        {"phase": "nested (excluded)", "yields": null, "is_a_floor": false}
+      ],
+      "rule": "a collection count is never a floor; a run that collects N and executes 0 has established nothing about pass state",
+      "label": "PROVEN"
+    },
+    "untracked_governance_tests": {
+      "count": 57,
+      "files": ["tests/test_rsi1_governance_registry.py", "tests/test_rsi1_governance_registry_adversarial.py"],
+      "both_untracked": true,
+      "under_option_A": "structurally absent from the worktree, not merely deselected",
+      "must_not_be_assumed_present": true,
+      "must_not_be_counted": true,
+      "label": "PROVEN"
+    },
+    "decision_state": "PENDING_OPERATOR_DECISION"
+  },
+
+  "integrity_safeguards": {
+    "in_suite_guard": {
+      "file": "src/arena/tests/conftest.py",
+      "modified_this_task": false,
+      "protected_trees": ["arena/results", "src/arena/results", "src/arena/arena/results", "evidence"],
+      "fingerprint_method": "(size, mtime_ns) per file via os.walk, skips __pycache__",
+      "scope": "session-scoped before/after",
+      "verdict": "tripwire, NOT integrity proof",
+      "defects": [
+        "not content-level: a write restoring mtime_ns (os.utime, copy2, rsync -t, cp -p, VCS checkout) is invisible",
+        "guards only 4 trees; evaluations/, failures/, baseline/, Report_Raphael/, policies/, configs/ unprotected",
+        "within-session comparison only; pre-session modifications undetected",
+        "missing tree yields an empty mapping rather than an error, so a vanished tree reads as clean",
+        "mtime touch with identical content causes a false positive"
+      ],
+      "label": "PROVEN"
+    },
+    "required_protocol": "content-level SHA-256 manifests before and after, covering the four named trees AND the whole tracked tree",
+    "prior_manifests_reverified_this_task": [
+      {"file": "BEFORE_protected.sha256", "lines": 67641, "sha256": "5a672359b52c0a005ca9a63fef8311e989f786e079b1dbf8b8db02f63bc0f384"},
+      {"file": "AFTER_all_tracked.sha256", "lines": 67641, "sha256": "2c11be6a6d69c44028016becba576286cb84bb69e7029393c2bb8880f1778da9"},
+      {"file": "AFTER_final.sha256", "lines": 67641, "sha256": "2c11be6a6d69c44028016becba576286cb84bb69e7029393c2bb8880f1778da9"},
+      {"file": "C2_BEFORE_wt.sha256", "lines": 58929, "sha256": "aea6970c2dcde9ca07b53d95ea7078dfceb92bc9a6bb4363d7a7b119cde725a6"},
+      {"file": "C2_AFTER_wt.sha256", "lines": 58929, "sha256": "aea6970c2dcde9ca07b53d95ea7078dfceb92bc9a6bb4363d7a7b119cde725a6"},
+      {"file": "C2_DIFF.txt", "bytes": 0}
+    ],
+    "determinism_observed": "AFTER_all_tracked and AFTER_final hash identically; C2_BEFORE_wt and C2_AFTER_wt hash identically",
+    "anomaly_reporting_rules": [
+      {"condition": "missing file (in BEFORE, absent in AFTER)", "handling": "report explicitly as REMOVED; never silently drop from the diff"},
+      {"condition": "added file", "handling": "report as ADDED"},
+      {"condition": "changed digest", "handling": "report as CHANGED with both digests"},
+      {"condition": "broken symlink", "handling": "4 tracked symlinks (cai_service, cloak_service, mcp_hub, mhddos_service -> /home/yaser/raphael-2.0/..., absent) are unreadable by sha256sum; enumerate in a separate symlink list and exclude identically from both manifests", "label": "PROVEN"},
+      {"condition": "unreadable file", "handling": "record path + errno; do not substitute a partial hash"},
+      {"condition": "scope mismatch", "handling": "NEVER compare manifests built from different file sets; assert equal line counts and record the digest of the git ls-files output used", "rationale": "a prior task made exactly this mistake and had to regenerate"},
+      {"condition": "manifest's own digest", "handling": "record sha256sum of BEFORE.sha256 and AFTER.sha256; an 'unchanged' verdict is only meaningful alongside scope and manifest digest"}
+    ]
+  },
+
+  "environment_fingerprint": {
+    "in_range_interpreter": {
+      "version": "Python 3.12.15 (main, Oct  3 2026, 01:03:07) [Clang 22.1.3]",
+      "symlink": ".venv/bin/python -> /home/yaser/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu/bin/python3.12",
+      "realpath": "/home/yaser/.local/share/uv/python/cpython-3.12.15-linux-x86_64-gnu/bin/python3.12",
+      "executable_sha256": "0886fb76ceec8ff568d23079b5da6342bb41675e216e11525d4d6a9e65988d10",
+      "venv_provenance": "uv 0.12.23; include-system-site-packages = false; CPython 3.12",
+      "label": "PROVEN"
+    },
+    "out_of_range_interpreter": {"version": "Python 3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]", "label": "PROVEN"},
+    "os": "Ubuntu 26.04 LTS",
+    "kernel": "6.6.87.2-microsoft-standard-WSL2 x86_64 (WSL2)",
+    "cpu": "Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz, 8 logical",
+    "ram_kb": 3930336,
+    "ram_gib_approx": 3.75,
+    "gpu": {"name": "NVIDIA GeForce MX130", "driver_version": "573.71"},
+    "lockfile_state": "NONE - poetry.lock, uv.lock, Pipfile.lock, constraints.txt, setup.py all absent",
+    "installed_dist_info_count": 117,
+    "pytest": "9.1.1",
+    "pytest_asyncio": "1.4.0",
+    "container_image_digests": "NOT APPLICABLE for the root suite; required only if a future authorized run explicitly requires containers",
+    "env_var_policy": "names only via 'env | cut -d= -f1 | sort'; never values",
+    "label": "PROVEN",
+    "required_at_run_time": [
+      "git rev-parse HEAD and HEAD^{tree} (captured pre- and post-run)",
+      "git status --porcelain (must be empty in a clean worktree)",
+      "git worktree list",
+      "date -u +%Y-%m-%dT%H:%M:%SZ at start and end",
+      "nvidia-smi --query-gpu=name,driver_version,memory.total --format=csv",
+      "/proc/meminfo MemAvailable at start and end",
+      "exact command line, working directory, exit code, UTC start/end timestamps, stdout, stderr"
+    ]
+  },
+
+  "pip_absent_blocker": {
+    "id": "BLK-E1",
+    "status": "BLOCKED",
+    "finding": "python -m pip freeze cannot be produced by the interpreter the run must use",
+    "evidence": ".venv/bin/python -m pip --version -> 'No module named pip'; system python3 has pip 25.1.1 but belongs to Python 3.14 (out of range)",
+    "consequence": "the specified dependency-inventory method is unavailable; using system pip would fingerprint the wrong interpreter",
+    "label": "PROVEN",
+    "options": [
+      {"id": "F1", "method": "read Name: and Version: from each installed distribution's own METADATA file, emit Name==Version, record the inventory's own digest", "recommended": true, "environment_change": false, "validated_read_only": true, "validation_result": "117 .dist-info directories -> 117 inventory entries, 0 entries with a missing Name or Version field", "uses_declared_metadata_not_filename_heuristic": true},
+      {"id": "F2", "method": "operator authorizes installing pip into .venv before the run", "recommended": false, "environment_change": true, "consequence": "modifies the environment being measured; the fingerprint would record a post-installation state and the change must be declared"},
+      {"id": "F3", "method": "system pip with --python .venv/bin/python", "recommended": false, "consequence": "fingerprints the wrong interpreter"}
+    ],
+    "f1_previous_method_defect": {
+      "previous": "derive name-version from .dist-info directory names with sed -E 's/-py3.*//; s/\\.dist-info//'",
+      "finding": "the regex only strips a tag literally beginning -py3; it yields correct output in this uv-created environment where all 117 directories are name-version.dist-info, but is environment-dependent and not robust",
+      "counter_example": "a pip-installed wheel produces torch-2.14.1-cp312-cp312-manylinux_2_28_x86_64.dist-info, which the regex leaves as torch-2.14.1-cp312-cp312-manylinux_2_28_x86_64",
+      "verdict": "the method did NOT consistently capture distribution name and version; F1 corrected to read METADATA",
+      "corrected": true,
+      "label": "PROVEN"
+    },
+    "f1_limitations": [
+      "a distribution inventory is NOT a lockfile: it does not pin hashes and says nothing about artifact integrity",
+      "it is NOT a dependency-graph proof: it records what is installed, not what was resolved from requirements.txt, and cannot show whether the installed set satisfies the declared requirements",
+      "it records installed state only; it cannot distinguish a direct from a transitive dependency, nor detect an extra undeclared package",
+      "METADATA yields canonical distribution names (Jinja2, PyYAML) while a filename method yields filesystem-normalized names (jinja2, pyyaml); only the former is authoritative, which matters when comparing against requirements.txt",
+      "the repository still has no lockfile of any kind; F1 mitigates this for measurement purposes but does not close the gap"
+    ],
+    "note": "pip freeze output need not match the manifest digest; it is required to exist",
+    "decision_state": "PENDING_OPERATOR_DECISION"
+  },
+
+  "ram_risk": {
+    "id": "RISK-RAM",
+    "finding": "3.75 GiB RAM with torch installed; the 1318-test run took 103 s",
+    "required_handling": "capture MemAvailable pre/post; carry an explicit wall-clock budget; classify an OOM kill as environmental, never as a test failure",
+    "label": "INFERRED"
+  },
+
+  "artifact_isolation": {
+    "id": "ISO-1",
+    "status": "CORRECTED",
+    "defect_found": "the earlier protocol cd-ed into the disposable worktree and then wrote every FP_* artifact with a relative path; those files would have landed inside the worktree, making the Phase-7 git status --porcelain non-empty and triggering the protocol's own stop condition S13 - the run would have invalidated itself",
+    "defects_corrected_count": {"relative_output_path_writes": 36, "semantic_issues": 3, "phase_structure_changes": 1},
+    "rules": [
+      "all output paths are absolute and rooted at $ART",
+      "no FP_* file may ever be created inside $REPO or $WT",
+      "commands that must resolve repository-relative paths run inside an explicit subshell ( cd \"$WT\" && ... ) so cwd is unambiguous while stdout/stderr still go to $ART",
+      "exit codes are captured into a variable immediately after the command, before any other command can overwrite $?, and written to a dedicated .exit file",
+      "S13 is NOT weakened - the worktree must be clean at run end; misplaced output is a protocol defect to be fixed, not an expected exception"
+    ],
+    "external_artifact_directory_example": "/home/yaser/audit-rsi1/g3-floor-artifacts",
+    "created_during_this_correction_task": false,
+    "verified_outside_repo_and_worktree_by": "Phase 0 preconditions (0a), (0b), (0c)",
+    "phase0_preconditions": [
+      {"id": "0a", "rule": "ART must be outside both $REPO and $WT", "violation_stop": "S14"},
+      {"id": "0b", "rule": "ART must not already contain a previous run's evidence; the protocol refuses to overwrite", "violation_stop": "S15"},
+      {"id": "0c", "rule": "creating ART may touch the user's filesystem and therefore requires R-2 authorization", "blocks": "phase 0"}
+    ],
+    "cwd_sensitive_commands": [
+      {"command": "xargs -0 -a FP_tracked.z sha256sum", "reason": "manifest records worktree-relative paths"},
+      {"command": "sha256sum -c FP_BEFORE.sha256", "reason": "-c resolves each recorded path relative to cwd"},
+      {"command": "ls poetry.lock uv.lock Pipfile.lock constraints.txt", "reason": "lockfile names are repo-relative"},
+      {"command": "pytest tests/... and the test_p2_guardrail_*.py glob", "reason": "suite paths and glob are repo-relative"}
+    ],
+    "label": "IMPLEMENTED"
+  },
+
+  "execution_protocol": {
+    "executed": false,
+    "phase_count": 10,
+    "phases": [
+      {"n": 0, "name": "external artifact directory preconditions", "outputs": ["$ART (created only after 0a/0b/0c)"], "is_a_floor": false},
+      {"n": 1, "name": "baseline and tree verification", "outputs": ["FP_phase1_toplevel.txt", "FP_phase1_head.txt", "FP_phase1_tree.txt", "FP_phase1_status.txt", "FP_worktrees_pre.txt", "FP_worktree_add.err", "FP_worktree_add.exit"], "assertions": ["HEAD == EXPECT_HEAD else S1", "HEAD^{tree} == EXPECT_TREE else S2", "status empty else S3"], "is_a_floor": false},
+      {"n": 2, "name": "environment fingerprint", "outputs": ["FP_start.txt", "FP_packages.txt", "FP_lockfile_state.txt", "FP_lockfile_state.exit", "FP_env_names.txt"], "blocked_by": "E-1 for the dependency inventory method", "is_a_floor": false},
+      {"n": 3, "name": "pre-run content hashes", "outputs": ["FP_tracked.z", "FP_tracked_lsfiles.exit", "FP_tracked_list_digest.txt", "FP_BEFORE.sha256", "FP_BEFORE_unreadable.txt", "FP_BEFORE.exit", "FP_BEFORE_count.txt", "FP_symlinks.txt"], "expected_non_zero_exit": "FP_BEFORE.exit is EXPECTED non-zero because 4 tracked symlinks are broken and sha256sum cannot read them; the check is the CONTENT of FP_BEFORE_unreadable.txt, not the exit status", "is_a_floor": false},
+      {"n": 4, "name": "collection only", "outputs": ["FP_collect.out", "FP_collect.err", "FP_collect.exit"], "is_a_floor": false},
+      {"n": 5, "name": "configured root suite (THE FLOOR)", "outputs": ["FP_run_start.txt", "FP_suite.out", "FP_suite.err", "FP_suite.exit", "FP_run_end.txt"], "is_a_floor": true},
+      {"n": 6, "name": "guardrails (corroborating only, never summed)", "outputs": ["FP_guard.out", "FP_guard.err", "FP_guard.exit"], "is_a_floor": false},
+      {"n": 7, "name": "post-run hashes and comparison", "outputs": ["FP_post_identity.txt", "FP_post_status.txt", "FP_worktrees_post.txt", "FP_AFTER.sha256", "FP_AFTER_unreadable.txt", "FP_AFTER.exit", "FP_AFTER_count.txt", "FP_AFTER_manifest_digest.txt", "FP_HASH_DIFF.txt", "FP_diff_summary.txt", "FP_unreadable_diff.txt", "FP_unreadable_diff.exit"], "scope_assertion_before_diff": true, "is_a_floor": false},
+      {"n": 8, "name": "independent verification (second party)", "outputs": ["FP_verify_BEFORE.out", "FP_verify_BEFORE.err", "FP_verify_BEFORE.exit", "FP_verify_BEFORE_failures.txt", "FP_verify_manifest_digest.txt", "FP_verify_tree.txt", "FP_all_exit_codes.txt"], "is_a_floor": false},
+      {"n": 9, "name": "report generation inside $ART", "outputs": ["hand-authored floor report in $ART"], "is_a_floor": false}
+    ],
+    "restoration": {
+      "commands": ["git -C $REPO worktree remove --force $WT", "git -C $REPO worktree list > $ART/FP_worktrees_post_removal.txt 2>&1"],
+      "requirement": "must match FP_worktrees_pre.txt with only the disposable $WT entry removed",
+      "do_not_prune": "/tmp/rbase-b6ef24 (predates this work)"
+    },
+    "path_semantics": {
+      "output_paths": "absolute, rooted at $ART",
+      "repository_relative_commands": "wrapped in ( cd \"$WT\" && ... )",
+      "non_cwd_sensitive_commands": "git -C, python -VV, /proc, /etc, absolute paths",
+      "exit_code_capture": "rc=$? immediately after the command, before any other command; written to a dedicated .exit file",
+      "scope_assertion": "equal line counts asserted BEFORE diffing; SCOPE_MISMATCH stops the run (S6/S17)"
+    }
+  },
+
+  "stop_conditions": [
+    {"id": "S1", "condition": "git rev-parse HEAD != fc3e2c132...", "classification": "revision mismatch"},
+    {"id": "S2", "condition": "git rev-parse HEAD^{tree} != e24d42bf...", "classification": "revision mismatch"},
+    {"id": "S3", "condition": "git status --porcelain non-empty at run start", "classification": "dirty worktree"},
+    {"id": "S4", "condition": "interpreter outside >=3.11,<3.13", "classification": "environment"},
+    {"id": "S5", "condition": "dependency inventory digest differs from expected", "classification": "environment"},
+    {"id": "S6", "condition": "BEFORE and AFTER line counts differ", "classification": "scope mismatch - never diff"},
+    {"id": "S7", "condition": "unreadable-file set changes", "classification": "manifest integrity"},
+    {"id": "S8", "condition": "any ADDED/REMOVED/CHANGED in the hash diff", "classification": "protected evidence modified"},
+    {"id": "S9", "condition": "collection phase exits non-zero", "classification": "collection error, not a test result"},
+    {"id": "S10", "condition": "execution exceeds pre-declared wall-clock budget", "classification": "environment"},
+    {"id": "S11", "condition": "OOM kill or signal termination", "classification": "environment, NOT a test failure"},
+    {"id": "S12", "condition": "non-zero exit with import/network/GPU cause", "classification": "environment, NOT a test failure"},
+    {"id": "S13", "condition": "git status --porcelain non-empty at run end", "classification": "worktree mutated by the run", "weakened": false},
+    {"id": "S14", "condition": "$ART is inside $REPO or $WT", "classification": "artifact-isolation violation", "added": true},
+    {"id": "S15", "condition": "$ART exists and is non-empty", "classification": "refusing to overwrite previous run evidence", "added": true},
+    {"id": "S16", "condition": "any FP_* file found inside $WT or $REPO", "classification": "artifact-isolation violation - the run contaminated its own measurement target", "added": true},
+    {"id": "S17", "condition": "FP_diff_summary.txt reports SCOPE_MISMATCH", "classification": "manifests built from different file sets", "added": true}
+  ],
+  "expected_non_zero_exits": {
+    "artifacts": ["FP_BEFORE.exit", "FP_AFTER.exit"],
+    "cause": "4 tracked symlinks (cai_service, cloak_service, mcp_hub, mhddos_service) are broken and sha256sum cannot read them",
+    "correct_check": "the CONTENT of FP_BEFORE_unreadable.txt must name exactly those 4 symlinks, and FP_unreadable_diff.exit must be 0",
+    "wrong_check": "treating the exit as failure would be a false stop; ignoring it would be a false pass",
+    "label": "PROVEN"
+  },
+
+  "prohibitions_during_run": [
+    "no test may be edited, skipped, xfailed, weakened, deleted, or added to alter the result - roadmap AM-6 treats this as evidence tampering and an automatic gate failure",
+    "no dependency install or upgrade",
+    "no git add / commit / stash / checkout inside the worktree",
+    "no performance benchmark",
+    "no Docker start, external network, or target interaction"
+  ],
+
+  "rollback": {
+    "scope": "a measurement run mutates nothing tracked, so rollback is limited to removing the disposable worktree and verifying git worktree list is restored",
+    "artefact_placement": "every FP_* is written under the external scratch directory $ART (example /home/yaser/audit-rsi1/g3-floor-artifacts), which is outside both the repository and the worktree; never into protected trees, never into the measurement target",
+    "repair_policy": "any code repair is a separate authorized task followed by a NEW validation run against a newly identified candidate; repairs never happen inside a measurement run"
+  },
+
+  "expected_artifacts": {
+    "location": "all under $ART (external scratch, example /home/yaser/audit-rsi1/g3-floor-artifacts)",
+    "none_inside_repository_or_worktree": true,
+    "groups": {
+      "preconditions": ["FP_worktrees_pre.txt", "FP_worktree_add.err", "FP_worktree_add.exit"],
+      "identity": ["FP_phase1_toplevel.txt", "FP_phase1_head.txt", "FP_phase1_tree.txt", "FP_phase1_status.txt"],
+      "fingerprint": ["FP_start.txt", "FP_packages.txt", "FP_packages_count.txt", "FP_packages_missing.txt", "FP_lockfile_state.txt", "FP_lockfile_state.exit", "FP_env_names.txt"],
+      "pre_run_hashing": ["FP_tracked.z", "FP_tracked_lsfiles.exit", "FP_tracked_list_digest.txt", "FP_BEFORE.sha256", "FP_BEFORE_unreadable.txt", "FP_BEFORE.exit", "FP_BEFORE_count.txt", "FP_symlinks.txt"],
+      "collection": ["FP_collect.out", "FP_collect.err", "FP_collect.exit"],
+      "floor": ["FP_run_start.txt", "FP_suite.out", "FP_suite.err", "FP_suite.exit", "FP_run_end.txt"],
+      "guardrails": ["FP_guard.out", "FP_guard.err", "FP_guard.exit"],
+      "post_run_hashing": ["FP_post_identity.txt", "FP_post_status.txt", "FP_worktrees_post.txt", "FP_AFTER.sha256", "FP_AFTER_unreadable.txt", "FP_AFTER.exit", "FP_AFTER_count.txt", "FP_AFTER_manifest_digest.txt"],
+      "comparison": ["FP_HASH_DIFF.txt", "FP_diff_summary.txt", "FP_unreadable_diff.txt", "FP_unreadable_diff.exit"],
+      "independent_verification": ["FP_verify_BEFORE.out", "FP_verify_BEFORE.err", "FP_verify_BEFORE.exit", "FP_verify_BEFORE_failures.txt", "FP_verify_manifest_digest.txt", "FP_verify_tree.txt", "FP_all_exit_codes.txt"],
+      "restoration_records": ["FP_worktrees_post_removal.txt"],
+      "report": ["hand-authored floor report in $ART"]
+    }
+  },
+
+  "acceptance_criteria": [
+    {"id": "C1", "criterion": "transcript exists with exit code and UTC start/end timestamps"},
+    {"id": "C2", "criterion": "bound to a specific commit AND tree SHA, verified with git rev-parse"},
+    {"id": "C3", "criterion": "interpreter satisfies >=3.11,<3.13"},
+    {"id": "C4", "criterion": "full environment fingerprint captured, including a dependency inventory that exists"},
+    {"id": "C5", "criterion": "collected/passed/failed/skipped/errored/warnings/duration as DISTINCT fields"},
+    {"id": "C6", "criterion": "BEFORE.sha256 identical to AFTER.sha256, same scope, manifest digest recorded"},
+    {"id": "C7", "criterion": "describes the baseline tree under measurement, or names its delta explicitly"},
+    {"id": "C8", "criterion": "independently re-verified by a party other than the runner"}
+  ],
+
+  "gate_implications": {
+    "a_successful_run_would": ["establish reproducible validation evidence for AM-8 and one criterion of the G3 evidence package"],
+    "a_successful_run_would_not": [
+      "prove every G3 security criterion",
+      "constitute GLM adversarial review - roadmap 14.12 remains outstanding (13 automated probes exist; the authority review has not occurred)",
+      "accept G3",
+      "authorize P4 or P10",
+      "resolve the AM-4-R3 provenance question",
+      "establish the validity of the historical effect sizes",
+      "resolve the substantive status of the 78 welded classifications or the dead-by-import-failure question",
+      "lift the P4/RSI freeze notice"
+    ],
+    "label": "PROVEN"
+  },
+
+  "census_note": {
+    "reintroduced_as_unresolved_inconsistency": false,
+    "prior_finding": "NO_CONFLICT_EXISTS - the apparent 78-file discrepancy was a revision/scope misreading",
+    "detail": "F2 record 001R2 describes a 140-file census (68/6/5/61); F2 001R6 and WELD_SET U-3 both describe the 150-file census (78/6/4/62); CENSUS.md empirically tallies 78/6/4/62 = 150",
+    "still_open_and_for_authority": ["whether 'welded' is verified rather than merely labelled", "whether 'dead by import failure' counts as deleted"],
+    "authority": "GLM"
+  },
+
+  "approval_state_vocabulary": {
+    "values_used": ["RESOLVED", "RESOLVED_NOT_APPLICABLE", "RESOLVED_CONDITIONAL", "PENDING"],
+    "note": "Item states reflect explicit operator decisions received for the G3 test-floor request. RESOLVED = operator explicitly decided. RESOLVED_NOT_APPLICABLE = decision does not apply under the selected branch. RESOLVED_CONDITIONAL = operator authorized it subject to named preconditions that must hold at run time. PENDING = no operator decision received. No state implies that execution has been authorized: execution remains separately gated.",
+    "item_count": 10,
+    "resolved_count": 10,
+    "pending_count": 0,
+    "approved_count": 0,
+    "approved_count_note": "retained at 0 because this counter previously tracked engineering-side adoption; operator grants are recorded per item and in operator_decisions_20261009. No item is self-adopted.",
+    "label": "PROVEN"
+  },
+
+  "independent_reviewer_appointment": {
+    "decision_id": "R-3",
+    "reviewer_name": "ChatGPT",
+    "reviewer_kind": "AI system (large language model assistant). NOT a natural person. Recorded as such deliberately.",
+    "role": "Independent Technical Evidence Reviewer",
+    "appointment_authority": "Explicitly authorized by the operator in the current conversation",
+    "appointment_timestamp": "NOT SUPPLIED - no timestamp was given by the operator and none was manufactured",
+    "signature_or_attestation": "NONE - no signature or attestation exists and none was manufactured",
+    "organizational_affiliation": "NONE RECORDED - no affiliation was supplied by the operator and none was invented",
+    "independence_requirement": "The reviewer is not the OpenCode test runner",
+    "scope": "Independent review of the G3 test-floor evidence and acceptance criteria C1-C8",
+    "state": "RESOLVED_CONDITIONAL",
+    "condition": "Subject to the governing process permitting AI review. Whether an AI system may serve as the independent reviewer under this repository's governance is NOT established by any repository record, and engineering has not ruled on it. If the governing process does not permit AI review, this appointment does not satisfy R-3.",
+    "review_responsibilities": [
+      "baseline commit and tree identity",
+      "environment fingerprint and interpreter identity",
+      "pre-run and post-run hash manifests",
+      "tracked-file scope and unreadable-file records",
+      "test collection and execution logs",
+      "stdout, stderr, exit codes, timestamps and duration",
+      "guardrail results, reported separately from root-suite totals",
+      "stop-condition handling and worktree restoration",
+      "acceptance criteria C1-C8"
+    ],
+    "reviewer_must": "distinguish verified artifacts from agent-reported claims and from unavailable evidence; the review must be reproducible from the submitted artifacts to the extent possible",
+    "reviewer_does_not": [
+      "execute the test floor",
+      "alter results",
+      "authorize roadmap progression",
+      "accept G3 on the operator's behalf"
+    ],
+    "findings_status": "NONE - the appointment is not a review. No findings, verdict, or attestation exist yet.",
+    "authorization_vs_findings_distinction": "The operator's authorization of the reviewer and the reviewer's eventual findings are separate matters. This record captures only the former. Any later recorded finding must stand on its own evidence and must not be inferred from this appointment.",
+    "governance_limitations": [
+      "AI REVIEWER: the reviewer is an AI system, not a natural person or an independent organization. 'Independence' here therefore means 'a different system from the runner', which is a weaker form of independence than an unaffiliated human or third-party reviewer. This limitation is recorded, not waived.",
+      "GOVERNING PROCESS: whether the repository's governance permits AI review for gate evidence is unestablished - see the 'condition' field above.",
+      "NOT A SUBSTITUTE FOR ROADMAP 14.12: this appointment covers the G3 test-floor evidence review only. It does NOT perform or satisfy the roadmap 14.12 GLM adversarial review, which remains outstanding and separately required for G3.",
+      "NOT GATE AUTHORITY: this reviewer holds no authority to accept G3, promote a floor, or authorize P4/P10.",
+      "SAME-SESSION AUTHORSHIP: the operator authorized the reviewer within the same conversational session in which engineering runs. The reviewer's independence of the runner is asserted by role; it has not been independently evidenced."
+    ],
+    "label": "IMPLEMENTED"
+  },
+
+  "operator_decisions_20261009": {
+    "source": "explicit operator instruction received in session; selections reproduced verbatim below",
+    "operator_identity": "NOT SUPPLIED - the operator did not state a name, role, or principal",
+    "operator_timestamp_supplied": false,
+    "recorded_by": "engineering (recorder only, no authority exercised)",
+    "attestation_or_signature": "NONE - none was supplied and none was manufactured",
+    "decisions": [
+      {"id": "A-1", "operator_selection": "Select Option A - the frozen committed baseline, HEAD fc3e2c132591eab7edaa12e97e13fe2d01619411, tree e24d42bf7f7655293f3eb3a273c9ce4d94b1e061", "status": "RESOLVED"},
+      {"id": "A-2", "operator_selection": "Not applicable because Option A is selected", "status": "RESOLVED_NOT_APPLICABLE"},
+      {"id": "B-1", "operator_selection": "Include the root tests/ suite", "status": "RESOLVED"},
+      {"id": "B-2", "operator_selection": "Run the guardrail suites separately and report their results without adding them to the root-suite total", "status": "RESOLVED"},
+      {"id": "B-3", "operator_selection": "Exclude src/arena/tests; any future run of that suite requires separate authorization", "status": "RESOLVED"},
+      {"id": "E-1", "operator_selection": "Select F1 - read Name and Version from installed .dist-info/METADATA files without modifying the environment. The operator acknowledged this is not a lockfile or a complete dependency-graph proof", "status": "RESOLVED"},
+      {"id": "E-2", "operator_selection": "Set a minimum wall-clock budget of 20 minutes", "status": "RESOLVED"},
+      {"id": "R-1", "operator_selection": "Explicitly authorize creation of the disposable worktree at /home/yaser/audit-rsi1/g3-floor-wt, subject to all baseline and protocol preconditions", "status": "RESOLVED_CONDITIONAL"},
+      {"id": "R-2", "operator_selection": "Explicitly approve /home/yaser/audit-rsi1/g3-floor-artifacts as the external artifact directory, subject to verification that it is external to the repository and worktree, and empty before use. No unrelated files or directories may be modified or cleaned up", "status": "RESOLVED_CONDITIONAL"},
+      {"id": "R-3", "operator_selection": "Appointed ChatGPT as the Independent Technical Evidence Reviewer. The operator explicitly authorized the appointment in the current conversation. Reviewer is an AI system, is not the OpenCode test runner, and is scoped to independent review of the G3 test-floor evidence and acceptance criteria C1-C8. No human identity, signature, attestation timestamp, or organizational affiliation was supplied and none was invented.", "status": "RESOLVED_CONDITIONAL", "note": "conditional on the governing process permitting AI review; the appointment does not constitute a review and no findings exist"}
+    ],
+    "scope_limitation_stated_by_operator": "These decisions do not authorize any work outside the stated scope.",
+    "recorded_in_repository_files": true,
+    "execution_authorized_by_these_decisions": false
+  },
+
+  "approval_required": [
+    {"id": "A-1", "item": "Decision A - Option A (committed baseline) or Option B (candidate)?", "recommendation": "Option A", "state": "RESOLVED", "operator_selection": "Option A - frozen committed baseline fc3e2c132... / tree e24d42bf...", "blocks": "phase 1"},
+    {"id": "A-2", "item": "If Option B - commit the candidate, or accept a manifest-defined identity with no VCS revision?", "recommendation": null, "state": "RESOLVED_NOT_APPLICABLE", "operator_selection": "not applicable - Option A selected", "qualifier": "inapplicable under Option A; would become live only under Option B", "blocks": "any candidate run"},
+    {"id": "B-1", "item": "Root suite tests/ included?", "recommendation": "yes", "state": "RESOLVED", "operator_selection": "include root tests/ suite", "blocks": "phases 4-5"},
+    {"id": "B-2", "item": "Guardrail suites run separately as corroborating sub-results?", "recommendation": "yes, reported separately, never summed", "state": "RESOLVED", "operator_selection": "yes - run separately, report without adding to the root-suite total", "blocks": "phase 6"},
+    {"id": "B-3", "item": "Nested src/arena/tests excluded from the root floor?", "recommendation": "yes, excluded; requires separate authorization and an isolated worktree", "state": "RESOLVED", "operator_selection": "exclude; a future run requires separate authorization", "blocks": "phases 4-5"},
+    {"id": "E-1", "item": "Dependency-inventory method F1 / F2 / F3?", "recommendation": "F1", "state": "RESOLVED", "operator_selection": "F1 - read Name/Version from .dist-info/METADATA without modifying the environment; operator acknowledged it is not a lockfile or a complete dependency-graph proof", "blocks": "phase 2"},
+    {"id": "E-2", "item": "Wall-clock budget for the execution phase", "recommendation": ">= 20 minutes", "state": "RESOLVED", "operator_selection": "minimum 20 minutes", "blocks": "phase 5"},
+    {"id": "R-1", "item": "Authorize creating disposable worktree /home/yaser/audit-rsi1/g3-floor-wt?", "recommendation": "authorize", "state": "RESOLVED_CONDITIONAL", "operator_selection": "explicitly authorized, subject to all baseline and protocol preconditions", "qualifier": "conditional on the protocol's own preconditions passing at run time; worktree not yet created", "blocks": "worktree creation and all subsequent execution phases"},
+    {"id": "R-2", "item": "External scratch location for FP_* artifacts", "proposed_location": "/home/yaser/audit-rsi1/g3-floor-artifacts", "recommendation": null, "state": "RESOLVED_CONDITIONAL", "operator_selection": "explicitly approved, subject to verification that it is external to the repository and the worktree and empty before use; no unrelated files or directories may be modified or cleaned up", "qualifier": "conditional on the external/empty verification passing at run time; directory not yet created", "blocks": "phase 0"},
+    {"id": "R-3", "item": "Who performs the Phase-8 independent verification?", "recommendation": null, "state": "RESOLVED_CONDITIONAL", "operator_selection": "ChatGPT appointed as Independent Technical Evidence Reviewer by explicit operator authorization in the current conversation; reviewer is an AI system and is not the OpenCode test runner", "qualifier": "conditional on the governing process permitting AI review; the appointment is not a review and no findings exist yet", "blocks": "phase 8"}
+  ],
+
+
+  "r2_scratch_location_constraints": {
+    "proposed_location": "/home/yaser/audit-rsi1/g3-floor-artifacts",
+    "state": "RESOLVED_CONDITIONAL",
+    "operator_approval": "explicitly approved by the operator, subject to the verification conditions below; the location itself is approved but the directory has NOT been created",
+    "directory_created": false,
+    "parent_directory_in_use": true,
+    "parent_directory_contents_note": "/home/yaser/audit-rsi1/ already contains a live linked git worktree (ratification-wt, at the same HEAD), a separate clone (target/), and scratch files from unrelated sessions. Neither this correction nor the operator's approval authorized inspecting, moving, deleting, renaming, or cleaning any of them.",
+    "required_before_use": [
+      {"condition": "explicit operator approval of the specific location (R-2)", "satisfied": true},
+      {"condition": "verification that the location is external to both $REPO and the disposable worktree", "satisfied": false, "satisfied_at_run_time_by": "protocol Phase 0 precondition 0a"},
+      {"condition": "verification that it does not contain prior run evidence; the protocol must refuse to overwrite", "satisfied": false, "satisfied_at_run_time_by": "protocol Phase 0 precondition 0b"}
+    ],
+    "cleanup_constraint": "any future cleanup is restricted to artifacts known to belong to the authorized run. Broad cleanup or removal of unrelated content in /home/yaser/audit-rsi1/ is NOT permitted. Reaffirmed by the operator.",
+    "absence_is_not_authorization": "the absence of the proposed directory does not constitute authorization to create it; creation still requires the separate execution instruction",
+    "label": "PROVEN"
+  },
+
+  "recommendations_preserved_not_converted_to_approvals": {
+    "_historical": "This block records the state BEFORE any operator decision. It is retained unchanged for audit trail. The operator subsequently made explicit decisions - see operator_decisions_20261009. Engineering did not convert any recommendation into an approval; the operator granted them explicitly and they are recorded per item.",
+    "DEC_A": "Option A - frozen committed baseline",
+    "DEC_B_root_floor": "tests/",
+    "guardrails": "run separately, never added to the root-suite total",
+    "nested_arena": "excluded from the root floor; requires separate authorization and an isolated worktree",
+    "E1": "F1 - distribution inventory method that does not modify the environment",
+    "E2": "proposed time budget preserved for operator confirmation",
+    "R1": "no disposable worktree until explicitly authorized",
+    "R2": "external scratch location needs operator confirmation",
+    "R3": "independent verification must be assigned to a person other than the runner",
+    "authorization_state": "PENDING",
+    "converted_to_approval": false,
+    "converted_to_approval_meaning": "engineering-side statement only: no recommendation was adopted by engineering. The operator's explicit grants are recorded in operator_decisions_20261009 and are NOT an engineering conversion.",
+    "subsequent_operator_state": {"A-1": "RESOLVED", "A-2": "RESOLVED_NOT_APPLICABLE", "B-1": "RESOLVED", "B-2": "RESOLVED", "B-3": "RESOLVED", "E-1": "RESOLVED", "E-2": "RESOLVED", "R-1": "RESOLVED_CONDITIONAL", "R-2": "RESOLVED_CONDITIONAL", "R-3": "PENDING"}
+  },
+
+  "authorization_state": {
+    "granted": false,
+    "granted_meaning": "execution authorization. The operator's item-level decisions are recorded, but the operator explicitly stated the test-floor run must not begin until a SEPARATE explicit execution instruction is given. This flag therefore remains false.",
+    "state": "DECISIONS_RECORDED_EXECUTION_NOT_AUTHORIZED",
+    "awaiting": "a separate explicit operator instruction to execute the test floor",
+    "item_decisions_recorded": true,
+    "item_decisions_pending": ["R-3"],
+    "no_phase_may_begin_before": ["R-1", "A-1"],
+    "phase0_requires": ["R-1", "A-1", "R-2"],
+    "recommendations_converted_to_approvals": false,
+    "gate_accepted": false,
+    "p4_authorized": false,
+    "p10_authorized": false
+  },
+
+  "correction_scope": {
+    "files_changed": [
+      "reports/product-readiness/g3-remediation/G3_TEST_FLOOR_AUTHORIZATION_REQUEST_20261009.md",
+      "reports/product-readiness/g3-remediation/G3_TEST_FLOOR_AUTHORIZATION_REQUEST_20261009.json"
+    ],
+    "other_files_modified": false,
+    "fp_artifacts_written_during_this_task": 0,
+    "worktree_created_during_this_task": false,
+    "artifact_directory_created_during_this_task": false,
+    "tests_or_execution_phases_run": 0,
+    "commits": 0
+  },
+
+  "unknowns": [
+    "the prospective floor value - does not exist until an authorized run",
+    "nested-suite behaviour on a compliant interpreter - never run under the declared range",
+    "whether the Option B candidate has any untested regression - A-2 leaves Option B unused, so this stays unknown unless Option B is later selected",
+    "the reviewer's findings - R-3 is an appointment, not a review; no verdict exists and none may be inferred from the appointment",
+    "whether the governing process permits AI review of gate evidence - unestablished; recorded as R-3's condition",
+    "whether the repository will ever gain a lockfile - F1 mitigates but does not close this"
+  ],
+
+  "unmet_prerequisites": [
+    {"id": "U-1", "item": "R-3 verifier identity", "impact": "ADDRESSED - ChatGPT was appointed as Independent Technical Evidence Reviewer by explicit operator authorization. Subject to the AI-review governance condition recorded in independent_reviewer_appointment.", "blocks": "phase 8 - now unblocked subject to that condition", "authority": "operator", "status": "RESOLVED_CONDITIONAL"},
+    {"id": "U-2", "item": "Separate explicit execution instruction not yet given", "impact": "no phase may begin; the operator stated the run must not start until this is provided", "blocks": "all phases", "authority": "operator", "status": "OUTSTANDING"},
+    {"id": "U-3", "item": "Repository has no lockfile", "impact": "the F1 inventory records installed state only; cross-machine reproducibility remains weaker than a lockfile would provide", "blocks": "nothing directly; recorded limitation", "authority": "engineering + operator", "status": "OUTSTANDING"},
+    {"id": "U-4", "item": "Roadmap 14.12 GLM adversarial review has not been performed", "impact": "distinct from R-3. The test-floor evidence review appointed here does NOT satisfy 14.12, which remains required for G3", "blocks": "G3 acceptance (not the test-floor run)", "authority": "GLM", "status": "OUTSTANDING"}
+  ],
+
+  "summary": {
+    "package_ready_for_operator_decision": true,
+    "operator_decisions_received": true,
+    "operator_decisions_resolved": 10,
+    "operator_decisions_pending": 0,
+    "pending_decision_ids": [],
+    "independent_reviewer": "ChatGPT (AI system) - appointed, conditionally",
+    "reviewer_findings_recorded": false,
+    "protocol_artifact_isolation": "CORRECTED",
+    "is_a_g3_submission": false,
+    "gate_accepted": false,
+    "floor_designated": false,
+    "protocol_executable_as_written": true,
+    "execution_authorized": false,
+    "blocking_decisions": ["SEPARATE_EXECUTION_INSTRUCTION"],
+    "resolved_decision_ids": ["A-1", "A-2", "B-1", "B-2", "B-3", "E-1", "E-2", "R-1", "R-2", "R-3"],
+    "conclusion_depends_on_executing_any_test": false,
+    "status_line": "R-3 APPOINTMENT RECORDED SUBJECT TO GOVERNANCE - TEST FLOOR NOT EXECUTED - G3 NOT ACCEPTED - P4/P10 NOT AUTHORIZED"
+  }
+}

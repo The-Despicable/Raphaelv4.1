@@ -11,14 +11,14 @@ import httpx
 import uvicorn
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from .cloakbrowser import launch_async
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+from cloakbrowser import launch_async
 from pydantic import BaseModel, Field
 
 # AM-4 W-14 (R3.0-P23) weld dependency: broker mediation lives in the
 # canonical tree. Hard import (no fallback): the service fails closed at
 # startup when the canonical tree is absent.
-import sys
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from orchestrator.auth import enforce_broker_mediation, WeldNotAuthorized
 
 
@@ -241,8 +241,7 @@ async def lifespan(app: FastAPI):
     logger.info("Starting cloak-service...")
     try:
         browser = await launch_async(
-            headless=True,
-            args=["--no-sandbox"],
+            url="http://example.com",
         )
         logger.info("CloakBrowser launched successfully")
     except Exception as e:

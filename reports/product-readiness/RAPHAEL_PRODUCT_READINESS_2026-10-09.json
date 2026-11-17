@@ -1,0 +1,625 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "non_authoritative_audit_report",
+  "disclaimer": "This artifact records evidence and findings only. It does not accept, ratify, or authorize any gate, phase, promotion, or release.",
+  "audit": {
+    "date_utc": "2026-10-09",
+    "repository_root": "/home/yaser/external-audits/raphael-2",
+    "repository_alias": "~/raphael-2.0-rbsv2r",
+    "branch": "governance/rsi-1-provenance-correction",
+    "head_sha": "fc3e2c132591eab7edaa12e97e13fe2d01619411",
+    "tree_sha": "e24d42bf7f7655293f3eb3a273c9ce4d94b1e061",
+    "commit_count": 188,
+    "working_tree_dirty": true,
+    "working_tree_delta": [
+      {"status": "untracked", "path": "RAPHAEL_RSI1_INDEPENDENT_AUDIT_FC3E2C132.md"}
+    ],
+    "remotes": [
+      {"name": "origin", "url": "https://github.com/The-Despicable/raphael-2.0-rbsv2r"},
+      {"name": "canonical", "url": "git@github.com:The-Despicable/Raphaelv4.1.git"},
+      {"name": "audit-target", "url": "https://github.com/The-Despicable/raphael-audit-target.git"}
+    ],
+    "linked_worktrees": [
+      {
+        "path": "/home/yaser/audit-rsi1/ratification-wt",
+        "head_sha": "fc3e2c132591eab7edaa12e97e13fe2d01619411",
+        "branch": "governance/rsi-1-operator-ratification-draft",
+        "in_audited_tree": false,
+        "untracked_files": [
+          "evidence/historical_split_adjudication/OPERATOR_RATIFICATION_20261009.json",
+          "evidence/historical_split_adjudication/OPERATOR_RATIFICATION_20261009.md",
+          "evidence/historical_split_adjudication/operator_ratification.py",
+          "tests/test_operator_ratification_package.py",
+          "tests/test_operator_ratification_package_adversarial.py"
+        ]
+      },
+      {
+        "path": "/tmp/rbase-b6ef24",
+        "head_sha": "b6ef24bdb1bb7242613ccdcf6044121fcf3ae38f",
+        "state": "prunable gitdir file points to non-existent location"
+      }
+    ],
+    "environment": {
+      "host_os": "Windows host / WSL2 Ubuntu",
+      "python_venv": "3.12.15",
+      "python_system": "3.14.4",
+      "declared_requires_python": ">=3.11,<3.13",
+      "readme_declares_python": "3.12+",
+      "venv_has_pip": false
+    },
+    "execution_constraints": {
+      "permission_granted": ["read-only git/grep/list", "version probes", "write MD+JSON report"],
+      "tests_executed": false,
+      "src_arena_tests_executed": false,
+      "imports_executed": false,
+      "network_targets_contacted": false,
+      "secret_files_read": [],
+      "source_files_modified": []
+    }
+  },
+
+  "verdict": {
+    "overall": "NOT_READY",
+    "p10_g10_fulfilled": false,
+    "p10_g10_admissible": false,
+    "roadmap_position": "BLOCKED at G3",
+    "primary_reasons": [
+      "G3 has no acceptance ruling recorded anywhere in the repository; roadmap Appendix D states G3 BLOCKED, AM-4-R3 NOT EXECUTED, RSI IMPLEMENTATION NOT STARTED",
+      "P4.1-P4.5 and 20+ RSI-1 implementation commits exist on top of the unaccepted G3 gate",
+      "Frozen evaluation instrument has drifted: 5 of 9 pinned sha256 digests mismatch, pinned commit absent from object database, tag absent",
+      "Reproducibility manifest internally conflates two campaigns and its integrity gate certifies a dataset it does not declare",
+      "No LICENSE and no license metadata; no lockfile; package metadata omits 16 runtime dependencies"
+    ]
+  },
+
+  "precedence": {
+    "source": "RAPHAEL_MASTER_ROADMAP_v4.2_RSI.md Appendix E",
+    "order": [
+      "1. Explicit superseding ADR / governance ruling",
+      "2. RAPHAEL MASTER ROADMAP v4.2",
+      "3. v4.1 AM-1..AM-14 inheritance",
+      "4. Earlier v4 roadmap wording",
+      "5. Historical audit reports / repository comments",
+      "6. Individual model suggestions"
+    ],
+    "unresolved_conflict": {
+      "description": "WELD_SET.md (level 5) asserts 'AM-4 STATUS: ALL 15 WELDED'; roadmap (level 2) asserts 'AM-4-R3: NOT EXECUTED'. No ADR (level 1) resolves it. Under Appendix E the roadmap prevails and the discrepancy is an open governance question.",
+      "not_reconciled_by_auditor": true
+    }
+  },
+
+  "sources_of_truth": [
+    {"id": "S1", "path": "RAPHAEL_MASTER_ROADMAP_v4.2_RSI.md", "authority_level": 2, "date": "2026-09-19", "status": "authoritative; G3 BLOCKED"},
+    {"id": "S2", "path": "docs/adr/ADR-001..ADR-012", "authority_level": 1, "date": "2026-09-06", "status": "no ADR addresses AM-4-R3, G3 acceptance, or RSI ratification; duplicate ADR number 011"},
+    {"id": "S3", "path": "RAPHAEL_STATE.md", "authority_level": 5, "date": "2026-09-07", "status": "STALE: pins HEAD b676d819, actual fc3e2c132"},
+    {"id": "S4", "path": "REVIEWER_GUIDE.md", "authority_level": 5, "date": "2026-09-07", "status": "contradicts S3 on floor (621 vs 357)"},
+    {"id": "S5", "path": "evidence/g3_remediation/STATUS.md", "authority_level": 5, "date": "2026-09-07", "status": "G3 NOT ACCEPTED (no GLM ruling yet)"},
+    {"id": "S6", "path": "evidence/phases/P3_0_reinventory/WELD_SET.md", "authority_level": 5, "date": "2026-10-04", "status": "SELF-CONTRADICTORY"},
+    {"id": "S7", "path": "evidence/phase3_readiness/REMEDIATION_MANIFEST.json", "authority_level": 5, "date": "2026-10-09", "status": "Phase 3 unauthorized; operator_ratification_complete=false"},
+    {"id": "S8", "path": "evaluations/campaign/HOLDOUT_CLASSIFICATION_20261009.json", "authority_level": 5, "date": "2026-10-09", "status": "UNVERIFIABLE; self-correcting record"},
+    {"id": "S9", "path": "evaluations/campaign/rbs_v4_reproducibility_manifest.json", "authority_level": 5, "date": "2026-09-03", "status": "digest-pinned anchor; drifted and internally inconsistent"},
+    {"id": "S10", "path": "reports/RAPHAEL_BLOCKER_RESOLUTION_REPORT_2026-10-09.md", "authority_level": 5, "date": "2026-10-09", "status": "accurate; 8 to-do items, several still open at HEAD"},
+    {"id": "S11", "path": "RAPHAEL_RSI1_INDEPENDENT_AUDIT_FC3E2C132.md", "authority_level": 5, "date": "2026-10-09", "status": "untracked; not part of audited commit"},
+    {"id": "S12", "path": "branch audit/f-split-1 @ c1eab3dd2", "authority_level": 5, "date": "2026-10-09", "status": "bundle hashes verify; unadjudicated"},
+    {"id": "S13", "path": "~/audit-rsi1/ratification-wt", "authority_level": null, "date": "2026-10-09", "status": "out-of-tree; 5 untracked draft files"},
+    {"id": "S14", "path": "*_v5* roadmap", "authority_level": null, "date": null, "status": "DOES NOT EXIST in tree at this commit"}
+  ],
+
+  "gates": [
+    {"gate": "G0", "criterion_source": "roadmap 11.5", "status": "PASS", "evidence_label": "REPORTED", "note": "historical, per evidence/g3_remediation/STATUS.md:51"},
+    {"gate": "G1", "criterion_source": "roadmap 12.6", "status": "PASS", "evidence_label": "REPORTED", "note": "historical, same source"},
+    {"gate": "G2", "criterion_source": "roadmap 13.6", "status": "PASS", "evidence_label": "REPORTED", "note": "evidence/phases/P3_0/EVIDENCE.md:16 and evidence/phases/G2_RC/"},
+    {"gate": "G3", "criterion_source": "roadmap 14.1-14.12", "status": "BLOCKED", "status_detail": "NOT ACCEPTED", "evidence_label": "PROVEN", "note": "no acceptance record exists; roadmap lines 25-28, 3508, 3627-3631, 4657-4660; STATUS.md:17,54"},
+    {"gate": "G4", "criterion_source": "roadmap 15.9", "status": "FAIL", "status_detail": "NOT REACHED; P4 implemented out of order and unaccepted", "evidence_label": "PROVEN"},
+    {"gate": "G5", "criterion_source": "roadmap 16.7", "status": "DEFERRED", "status_detail": "NOT STARTED", "evidence_label": "UNKNOWN"},
+    {"gate": "G6", "criterion_source": "roadmap 17.6", "status": "DEFERRED", "status_detail": "NOT STARTED", "evidence_label": "UNKNOWN"},
+    {"gate": "G7", "criterion_source": "roadmap 18.6", "status": "DEFERRED", "status_detail": "NOT STARTED", "evidence_label": "UNKNOWN"},
+    {"gate": "G8", "criterion_source": "roadmap 19.9", "status": "BLOCKED", "status_detail": "holdout UNVERIFIABLE; measurement contract unadopted; statistical policy undefined", "evidence_label": "PROVEN"},
+    {"gate": "G9", "criterion_source": "roadmap 20.5", "status": "DEFERRED", "status_detail": "NOT STARTED; ~78 unmediated files remain", "evidence_label": "IMPLEMENTED"},
+    {"gate": "G10", "criterion_source": "roadmap 21.7", "status": "FAIL", "status_detail": "NOT FULFILLED; neither gate branch satisfiable; 0 of 10 admission fields exist", "evidence_label": "PROVEN"}
+  ],
+
+  "g3_criterion_matrix": [
+    {"id": "G3.1", "criterion": "Re-verify all bypasses (P3.1)", "status": "UNKNOWN", "label": "REPORTED"},
+    {"id": "G3.2", "criterion": "Planner request-only (P3.2)", "status": "IMPLEMENTED", "label": "IMPLEMENTED"},
+    {"id": "G3.3", "criterion": "Close Head-1 subprocess paths (P3.3)", "status": "UNKNOWN", "label": "REPORTED"},
+    {"id": "G3.4", "criterion": "Close direct tool path (P3.4)", "status": "UNKNOWN", "label": "REPORTED"},
+    {"id": "G3.5", "criterion": "Gate capability constructors (P3.5)", "status": "UNKNOWN", "label": "REPORTED"},
+    {"id": "G3.6", "criterion": "Fix ExecutionEngine ownership (P3.6)", "status": "UNKNOWN", "label": "UNKNOWN"},
+    {"id": "G3.7", "criterion": "Fold/deprecate mode-local execution (P3.7)", "status": "UNKNOWN", "label": "REPORTED"},
+    {"id": "G3.8", "criterion": "Static guardrail (P3.8)", "status": "IMPLEMENTED", "label": "IMPLEMENTED", "artifact": "src/orchestrator/exec/inv1_guard.py"},
+    {"id": "G3.9", "criterion": "Dynamic bypass tests (P3.9)", "status": "IMPLEMENTED", "label": "IMPLEMENTED", "artifact": "tests/test_am4_weld_gates.py", "test_function_count": 47},
+    {"id": "G3.10", "criterion": "Native sandbox + safe capability (P3.10)", "status": "IMPLEMENTED", "label": "IMPLEMENTED"},
+    {"id": "G3.11", "criterion": "MVP demonstration (P3.11)", "status": "IMPLEMENTED", "label": "IMPLEMENTED"},
+    {"id": "G3.12", "criterion": "MVP failure criteria (8 items, 14.11)", "status": "UNKNOWN", "label": "BLOCKED"},
+    {"id": "G3.13", "criterion": "GLM adversarial review (10 classes, 14.12)", "status": "FAIL", "label": "PROVEN", "note": "no GLM ruling artifact exists"},
+    {"id": "G3.14", "criterion": "AM-4-R3 execution record", "status": "FAIL", "label": "PROVEN", "note": "no matches for AM-4-R3 under evidence/phases/P3_0_reinventory"}
+  ],
+
+  "p10_admission_checklist": {
+    "capability_name": false,
+    "mission_class": false,
+    "insufficiency_evidence": false,
+    "security_authorization_boundary": false,
+    "expected_evidence_output": false,
+    "evaluation_slot_and_criterion": false,
+    "dependencies": false,
+    "rollback_disablement_plan": false,
+    "owner_and_approvals": false,
+    "explicit_rsi_admission_package": false,
+    "fields_present": 0,
+    "fields_required": 10
+  },
+
+  "end_to_end_journey": [
+    {"step": 1, "stage": "clone", "result": "documented", "label": "REPORTED"},
+    {"step": 2, "stage": "python envelope", "result": "CONFLICT (README 3.12+ / pyproject <3.13 / evidence on 3.14.4)", "label": "PROVEN"},
+    {"step": 3, "stage": "venv create", "result": "3.12.15 present", "label": "PROVEN"},
+    {"step": 4, "stage": "install", "result": "FAIL - no lockfile; pip absent from venv", "label": "PROVEN"},
+    {"step": 5, "stage": "configure", "result": ".env.example -> .env; .env gitignored and not read by audit", "label": "IMPLEMENTED"},
+    {"step": 6, "stage": "validate config", "result": "scripts/validate_env.py exists; not executed", "label": "IMPLEMENTED"},
+    {"step": 7, "stage": "stack bring-up", "result": "FAIL - self-declared not validated in this working tree", "label": "PROVEN"},
+    {"step": 8, "stage": "smoke test", "result": "scripts/smoke_test.py exists; not executed", "label": "IMPLEMENTED"},
+    {"step": 9, "stage": "governed demo", "result": "run_demo_d1.sh - strongest artifact found; not executed", "label": "IMPLEMENTED"},
+    {"step": 10, "stage": "canonical run", "result": "run_episode(require_scope=True) present", "label": "IMPLEMENTED"},
+    {"step": 11, "stage": "evidence", "result": "evidence/p311_mvp, evidence/phases/P3_0 present", "label": "IMPLEMENTED"},
+    {"step": 12, "stage": "gate", "result": "BLOCKED - G3 not accepted", "label": "PROVEN"},
+    {"step": 13, "stage": "evaluation campaign", "result": "FAIL - canonical JSONL MISSING, UNVERIFIABLE", "label": "PROVEN"},
+    {"step": 14, "stage": "shutdown/rollback", "result": "no runbook found", "label": "UNKNOWN"}
+  ],
+
+  "findings": [
+    {
+      "id": "EVAL-001",
+      "title": "Frozen evaluation instrument has drifted from the audited tree",
+      "severity": "P0 Critical",
+      "confidence": "High",
+      "label": "PROVEN",
+      "gates_affected": ["G3", "G4", "G8"],
+      "artifact": "evaluations/campaign/rbs_v4_reproducibility_manifest.json",
+      "observed": "Pinned commit 74e52eddff698919e5776d8b6cb1ee75dc3159f8 absent from object database; tag v4-benchmark-frozen absent; 5 of 9 pinned sha256 digests mismatch (4 match).",
+      "digest_comparison": [
+        {"file": "src/arena/d6_manifest.py", "manifest": "1059bb34...", "actual": "1059bb34...", "result": "MATCH"},
+        {"file": "src/arena/environment.py", "manifest": "a12f7c42...", "actual": "c9d3b2b1...", "result": "MISMATCH"},
+        {"file": "src/arena/ablation_runner.py", "manifest": "22a4617c...", "actual": "f016e20c...", "result": "MISMATCH"},
+        {"file": "src/orchestrator/brain/action.py", "manifest": "e3e8cdba...", "actual": "c450595e...", "result": "MISMATCH"},
+        {"file": "src/orchestrator/student/stack_matcher.py", "manifest": "de67061b...", "actual": "de67061b...", "result": "MATCH"},
+        {"file": "src/orchestrator/brain/capability_broker.py", "manifest": "0906db74...", "actual": "8e0603be...", "result": "MISMATCH", "note": "canonical PDP drifted"},
+        {"file": "src/orchestrator/brain/candidate_generators/student_generator.py", "manifest": "22282327...", "actual": "22282327...", "result": "MATCH"},
+        {"file": "src/arena/ablation.py", "manifest": "678c997a...", "actual": "5eb4a853...", "result": "MISMATCH"},
+        {"file": "src/arena/runner.py", "manifest": "9f1bb108...", "actual": "9f1bb108...", "result": "MATCH"}
+      ],
+      "expected": "All pinned digests match; commit and tag resolve",
+      "why_missed": "Integrity gate check 8 verifies the frozen hash at the manifest's own commit (self-referential); no consumption-time re-verification",
+      "remediation": "Mark frozen-instrument block UNVERIFIABLE_DRIFT via separately reviewed change; never auto-rewrite the anchor; add CI re-verification that fails closed",
+      "blocks_g10": true,
+      "blocks_launch": true
+    },
+    {
+      "id": "EVAL-002",
+      "title": "Reproducibility manifest conflates two campaigns; integrity gate certifies an undeclared dataset",
+      "severity": "P0 Critical",
+      "confidence": "High",
+      "label": "PROVEN",
+      "gates_affected": ["G4", "G8"],
+      "artifact": "evaluations/campaign/rbs_v4_reproducibility_manifest.json",
+      "observed": "dataset block = Campaign B (1200 rows, Aug-7 window, sha256 2bf614f8); design block = Campaign A (3240 runs, seeds 1072-1101); model_provider = gpt-oss:20b-cloud (Campaign A); reproducibility_command names the Campaign A script; verification gate run 2026-08-05T23:23:13Z precedes declared dataset start 2026-08-07T12:11:23Z and certifies 3240/3240 rows.",
+      "corroboration": "RAPHAEL_BLOCKER_RESOLUTION_REPORT_2026-10-09.md:189-199; HOLDOUT_CLASSIFICATION_20261009.json",
+      "why_missed": "Digest-pinned anchor protected from modification; no machine-enforced cross-block consistency check exists",
+      "remediation": "Add cross-block consistency validator (rows equality, gate row count, gate timestamp within dataset window, provider/campaign agreement) that fails closed",
+      "blocks_g10": true,
+      "blocks_launch": true
+    },
+    {
+      "id": "GOV-001",
+      "title": "G3 unaccepted while P4 and RSI-1 implementation sits on top of it",
+      "severity": "P0 Critical",
+      "confidence": "High",
+      "label": "PROVEN",
+      "gates_affected": ["G3", "G4", "G10"],
+      "observed": "07fad8c1 is an ancestor of fc3e2c132 (merge-base --is-ancestor exit 0); 37 commits between them including P4.1-P4.5 implementations (9527ed033, 6f4bd5207, 6f49483a7, 5ba213ac0, d2abdc7fa, 0fa5fa8a3) and 20+ RSI-1 commits; no commit/file/ADR records a G3 acceptance ruling",
+      "roadmap_conflict": ["roadmap:698", "roadmap:3508-3528", "roadmap:3627-3631", "roadmap:4657-4660"],
+      "self_declaration": ["evidence/g3_remediation/STATUS.md:17,54", "REMEDIATION_MANIFEST.json:59"],
+      "remediation": "Stop further RSI-1/P4 work; escalate for G3 ruling; add machine check refusing rsi/ or P4 commits while G3 != ACCEPTED",
+      "blocks_g10": true,
+      "blocks_launch": true
+    },
+    {
+      "id": "GOV-002",
+      "title": "Authoritative weld record contradicts itself",
+      "severity": "P1 High",
+      "confidence": "High",
+      "label": "PROVEN",
+      "gates_affected": ["G3"],
+      "artifact": "evidence/phases/P3_0_reinventory/WELD_SET.md",
+      "observed": "Duplicated heading 'Post-weld status' at lines 35 and 49; line 45 claims 26 tests, line 60 claims 47 tests (actual: 47); header claims ALL 15 WELDED while W-14 row says 'P9-delete ruling still owed' and line 81 says 'Remaining not-yet paths: none (0)'",
+      "remediation": "Produce a single reviewed WELD_SET.md with one status table and one verified test count; preserve prior revision in git history",
+      "blocks_g10": true,
+      "blocks_launch": false
+    },
+    {
+      "id": "GOV-003",
+      "title": "No operator-authority mechanism exists at the audited commit",
+      "severity": "P1 High",
+      "confidence": "High",
+      "label": "PROVEN",
+      "gates_affected": ["G4", "G8", "G10"],
+      "observed": "src/orchestrator/rsi/governance_registry.py and evidence/GOVERNANCE_DECISIONS_20261009.jsonl both absent; REMEDIATION_MANIFEST.json:55-56 shows PENDING_OPERATOR_RATIFICATION / operator_ratification_complete=false; ratification drafts exist only as 5 untracked files in an out-of-tree worktree",
+      "remediation": "Implement the append-only registry as specified; seed the six decisions as PROPOSED; require operator ratification through it. This audit adopts nothing.",
+      "blocks_g10": true,
+      "blocks_launch": true
+    },
+    {
+      "id": "EVAL-003",
+      "title": "README publishes statistical results derived from an artifact classified UNVERIFIABLE",
+      "severity": "P1 High",
+      "confidence": "High",
+      "label": "PROVEN",
+      "gates_affected": ["G8", "G10"],
+      "artifact": "README.md:118, 141-150",
+      "observed": "Key Results table presents d=+0.773, p=3.16e-30 etc. as DEMONSTRATED, sourced from a dataset HOLDOUT_CLASSIFICATION_20261009.json classifies UNVERIFIABLE/MISSING; truth-sync only partially executed",
+      "remediation": "Add explicit 'SOURCE DATASET: UNVERIFIABLE' banner to Key Results and Reproduction Steps",
+      "blocks_g10": true,
+      "blocks_launch": false
+    },
+    {
+      "id": "EVAL-004",
+      "title": "Snapshot origin binding not implemented",
+      "severity": "P1 High",
+      "confidence": "High",
+      "label": "PROVEN",
+      "gates_affected": ["G8"],
+      "artifact": "src/orchestrator/rsi/snapshot.py",
+      "observed": "7096 bytes, mtime 2026-10-07T12:03 - untouched by the 2026-10-09 remediation; evaluator-identity / gate-config-digest / anchor-identity binding absent",
+      "remediation": "Implement as specified in blocker to-do item 5; bump schema version if canonical_dict is content-pinned in tests",
+      "blocks_g10": true,
+      "blocks_launch": false
+    },
+    {
+      "id": "SEC-001",
+      "title": "No lockfile; installed environment many major versions ahead of declared floors",
+      "severity": "P1 High",
+      "confidence": "High",
+      "label": "PROVEN",
+      "gates_affected": ["G0", "G4"],
+      "observed": "No poetry.lock/uv.lock/Pipfile.lock/constraints.txt; all constraints are open lower bounds; .venv has no pip; undeclared CUDA stack installed",
+      "version_drift": [
+        {"package": "transformers", "declared": ">=4.41.0", "installed": "5.18.0", "delta": "+1 major"},
+        {"package": "paramiko", "declared": ">=3.4.0", "installed": "5.0.0", "delta": "+1 major"},
+        {"package": "mcp", "declared": ">=1.27.0", "installed": "2.3.0", "delta": "+1 major"},
+        {"package": "numpy", "declared": ">=1.26.0", "installed": "2.5.3", "delta": "+1 major (ABI break)"},
+        {"package": "pandas", "declared": ">=2.2.0", "installed": "3.0.6", "delta": "+1 major"},
+        {"package": "cryptography", "declared": ">=42.0.0", "installed": "50.0.2", "delta": "+8 minor"},
+        {"package": "aiohttp", "declared": ">=3.9.0", "installed": "3.14.3", "delta": "+5 minor"},
+        {"package": "fastapi", "declared": ">=0.115.0", "installed": "0.142.2", "delta": "+27 minor"},
+        {"package": "torch", "declared": ">=2.3.0", "installed": "2.14.1", "delta": "+11 minor"}
+      ],
+      "positive_note": "Packages verified against current advisories are patched: aiohttp 3.14.3, starlette 1.7.0, python-multipart 0.0.32",
+      "unverified_packages": ["torch", "transformers", "numpy", "pandas", "mcp", "paramiko", "cryptography", "neo4j", "pywinrm", "requests", "jinja2"],
+      "remediation": "Commit a hashed lockfile; add upper bounds; install pip in .venv; add scheduled dependency scan",
+      "blocks_g10": false,
+      "blocks_launch": true
+    },
+    {
+      "id": "SEC-002",
+      "title": "Package metadata omits 16 runtime dependencies",
+      "severity": "P1 High",
+      "confidence": "High",
+      "label": "PROVEN",
+      "gates_affected": [],
+      "artifact": "pyproject.toml:11-27 vs requirements.txt:22-40",
+      "observed": "pyproject declares 15 deps; requirements.txt adds fastapi, uvicorn, httpx, mcp, python-multipart, dnspython, neo4j, pywinrm, aiofiles, jinja2, python-dotenv plus test deps. pip install . yields a non-functional product.",
+      "remediation": "Reconcile pyproject with requirements; regenerate metadata",
+      "blocks_g10": false,
+      "blocks_launch": true
+    },
+    {
+      "id": "SEC-003",
+      "title": "No LICENSE, no license metadata, and active offensive payloads shipped in-tree",
+      "severity": "P1 High",
+      "confidence": "High",
+      "label": "PROVEN",
+      "gates_affected": ["G4"],
+      "observed": "No LICENSE/COPYING file; no license field in pyproject.toml. Tree contains sliver backend, mhddos-service, phishing/evilginx/gophish, sword, c2-server, cai-service, and failures/CVE-2025-69212-PoC/ documenting webshell deployment, interactive RCE, reverse shells, and download-and-execute payload. origin/main history contains 'purge offensive payloads from working tree (W0.5 scope)'; audited branch 'offensive-restore' restores them. ADR-007 legal-review trigger never discharged.",
+      "operator_decision_required": true,
+      "remediation": "Operator/GLM must decide license, third-party license inventory, authorized-use posture, and whether the PoC directory belongs in the product repository",
+      "blocks_g10": false,
+      "blocks_launch": true
+    },
+    {
+      "id": "ARCH-001",
+      "title": "INV-1 is perimeter-scoped, not global; deadness partly rests on import failure",
+      "severity": "P1 High",
+      "confidence": "High",
+      "label": "IMPLEMENTED",
+      "gates_affected": ["G3", "G9"],
+      "observed": "80 raw-primitive call sites across 36 non-test files in src/orchestrator; only ~6 inside exec/. Census 150 effect files: 78 not-yet-mediated / 6 mediated / 4 reachable / 62 dead. DR-001 states sword.phase_2_exploit fails to import and is 1 of 19 fresh-process import failures.",
+      "scoping_note": "Project documents this honestly: F2_PERIMETER_RECORD.md:91-120 scopes all no-bypass claims to the canonical Runtime import closure (34 static / 53 loaded modules, 0 Arena)",
+      "remediation": "Keep perimeter scoping explicit in all product-facing claims; complete AM-4 welding and P9 deletion; treat dead-by-import-failure as not-deleted",
+      "blocks_g10": false,
+      "blocks_launch": false
+    },
+    {
+      "id": "GOV-004",
+      "title": "RAPHAEL_STATE.md is stale but self-designates as canonical",
+      "severity": "P2 Medium",
+      "confidence": "High",
+      "label": "PROVEN",
+      "artifact": "RAPHAEL_STATE.md:3,4,10,30",
+      "observed": "Pins HEAD b676d819 (actual fc3e2c132); states floor 357 passed vs REVIEWER_GUIDE.md 621 passed",
+      "remediation": "Regenerate or delete; reconcile the floor number across all documents",
+      "blocks_g10": false,
+      "blocks_launch": false
+    },
+    {
+      "id": "GOV-005",
+      "title": "Duplicate ADR number 011 with two unrelated subjects",
+      "severity": "P2 Medium",
+      "confidence": "High",
+      "label": "PROVEN",
+      "artifact": "docs/adr/ADR-011-arena-clause-addendum.md, docs/adr/ADR-011-sandbox-layer-mechanisms-not-authorization.md",
+      "remediation": "Renumber one; ADR numbering is the top precedence level",
+      "blocks_g10": false,
+      "blocks_launch": false
+    },
+    {
+      "id": "SEC-004",
+      "title": "Compose stack: no healthchecks, no container hardening, weak committed default credentials",
+      "severity": "P2 Medium",
+      "confidence": "High",
+      "label": "PROVEN",
+      "artifact": "configs/docker-compose.yml",
+      "observed": "15 services; healthcheck count 0 despite depends_on x8; read_only 0; security_opt/no-new-privileges 0; user: 0; cap_add on 5 services (NET_ADMIN/NET_RAW); credentials TOR_CONTROL_PASS:-changeme (232), DB_PASSWORD=p@ssw0rd (326), MYSQL_PASSWORD=p@ssw0rd (341), MYSQL_ROOT_PASSWORD=rootp@ssw0rd (342) contradict .env.example min-16-char requirement",
+      "strength": "All 18 published ports bound to 127.0.0.1",
+      "remediation": "Add healthchecks; add read_only/no-new-privileges/user where feasible; remove weak fallbacks so missing secrets fail closed",
+      "blocks_g10": false,
+      "blocks_launch": true
+    },
+    {
+      "id": "SEC-005",
+      "title": "scripts/JUDGE.py raises at import on Python >=3.13; system Python is 3.14.4",
+      "severity": "P2 Medium",
+      "confidence": "High",
+      "label": "PROVEN",
+      "artifact": "scripts/JUDGE.py:51-56, README.md:72",
+      "remediation": "Move guard to __main__; state the supported range in README including the upper bound",
+      "blocks_g10": false,
+      "blocks_launch": false
+    },
+    {
+      "id": "SEC-006",
+      "title": "Packaging metadata references non-existent packages; four service dirs are unpackageable",
+      "severity": "P2 Medium",
+      "confidence": "High",
+      "label": "PROVEN",
+      "artifact": "pyproject.toml:31",
+      "observed": "packages.find include lists config* and benchmarks*; neither src/config nor src/benchmarks exists. src/{c2-server,cai-service,mcp-hub,recon-pipeline} are not valid Python identifiers",
+      "remediation": "Fix include list; decide the fate of hyphenated service packages",
+      "blocks_g10": false,
+      "blocks_launch": false
+    },
+    {
+      "id": "ARCH-002",
+      "title": "Legacy evidence-contamination path still open",
+      "severity": "P2 Medium",
+      "confidence": "High",
+      "label": "PROVEN",
+      "observed": "tests/conftest.py installs an autouse fixture redirecting arena.ablation_runner.RESULTS_BASE; src/arena/tests/conftest.py does not exist (blocker to-do item 6 unimplemented). arena run IDs are deterministic by design, so the nested suite overwrites tracked historical evidence - the incident recorded in evidence/arena_contamination_20261004/README.md (14 dirs rewritten 2026-10-04)",
+      "remediation": "Add src/arena/tests/conftest.py plus before/after sha256 tree-manifest proof",
+      "blocks_g10": false,
+      "blocks_launch": false
+    },
+    {
+      "id": "COR-001",
+      "title": "Defect register incomplete",
+      "severity": "P2 Medium",
+      "confidence": "High",
+      "label": "PROVEN",
+      "artifact": "evidence/DEFECT_REGISTER.md",
+      "observed": "Contains only DR-001; DR-002 (F1) and DR-003 (F4) from blocker to-do item 7 are absent",
+      "remediation": "Add DR-002 and DR-003",
+      "blocks_g10": false,
+      "blocks_launch": false
+    },
+    {
+      "id": "OPS-001",
+      "title": "Deployment self-declared unvalidated; no reproducible clean-install record",
+      "severity": "P2 Medium",
+      "confidence": "High",
+      "label": "PROVEN",
+      "artifact": "README.md:92-93, launch_pilot.sh",
+      "remediation": "Record a clean-install bring-up verification in a disposable environment",
+      "blocks_g10": false,
+      "blocks_launch": true
+    },
+    {
+      "id": "OPS-003",
+      "title": "No CI binding for the configured suite at this commit",
+      "severity": "P2 Medium",
+      "confidence": "Medium",
+      "label": "IMPLEMENTED",
+      "observed": "ci-templates/.gitlab-ci.yml and ci-templates/Jenkinsfile exist; no .github/ directory; no evidence of any CI run bound to fc3e2c132; floor numbers are self-reported transcripts",
+      "remediation": "Bind the configured suite to a real runner",
+      "blocks_g10": false,
+      "blocks_launch": false
+    },
+    {
+      "id": "DOC-001",
+      "title": "Three-way contradiction on supported Python environment",
+      "severity": "P2 Medium",
+      "confidence": "High",
+      "label": "PROVEN",
+      "observed": "README 3.12+ vs pyproject >=3.11,<3.13 vs recorded suite on 3.14.4 (outside declared range). The declared frozen pin has never been satisfied by any recorded run.",
+      "remediation": "Reconcile; re-run the floor on the declared range",
+      "blocks_g10": false,
+      "blocks_launch": false
+    },
+    {
+      "id": "OPS-002",
+      "title": "Broken hard-coded absolute path",
+      "severity": "P3 Low",
+      "confidence": "High",
+      "label": "PROVEN",
+      "artifact": "scripts/run_help.sh",
+      "observed": "cd /home/yaser/raphael-2.0 - path absent in this worktree",
+      "blocks_g10": false,
+      "blocks_launch": false
+    },
+    {
+      "id": "GOV-006",
+      "title": "No ADR records the AM-4-R3/G3 status change implied by WELD_SET.md",
+      "severity": "P3 Low",
+      "confidence": "Medium",
+      "label": "PROVEN",
+      "remediation": "Make the discrepancy an explicit governance question via ADR, per Appendix E",
+      "blocks_g10": false,
+      "blocks_launch": false
+    }
+  ],
+
+  "performance": {
+    "classification": "UNCHARACTERIZED",
+    "not": "PASS or FAIL",
+    "measurements_taken": 0,
+    "rationale": "No performance measurement of any kind exists in the repository; operator permission was read-only; no baseline or target exists to compare against.",
+    "search_evidence": "grep -rln -iE 'p50|p95|p99|latency benchmark|throughput' evidence reports -> zero matches; benchmarks/ contains only scenario/security/target benchmarks, no timing harness",
+    "only_existing_claim": {
+      "id": "L-001",
+      "source": "docs/LIMITATIONS.md via README.md:161",
+      "text": "Cognitive loop latency 30-120s/cycle",
+      "severity": "MEDIUM",
+      "label": "REPORTED",
+      "caveats": "never instrumented; no distribution, sample size, environment, or confidence interval"
+    },
+    "proposed_protocol_requires_operator_approval": true,
+    "protocol": {
+      "workloads": ["W-small: 1 episode, safe capability, no LLM", "W-typical: 1 episode, Student+Planner+1 LLM call", "W-large: 5 episodes, action cap 5, LLM per iteration"],
+      "environment_pinning": ["commit SHA", "tree SHA", "venv interpreter hash", "pip freeze", "CPU/RAM/GPU", "container image digests", "model id + provider + temperature 0"],
+      "instrumentation": "per-stage wall time in run_episode; report p50/p95/p99 only if n>=100; separate cold from warm",
+      "secondary_counters": ["LLM tokens/cost per episode", "queue wait", "artifact bytes", "evidence-store entries", "receipt count"],
+      "isolation": "disposable worktree with before/after sha256 manifests of arena/results/ and evidence/ (mandatory per ARCH-002)",
+      "acceptance": "provisional thresholds proposed for human approval only; not adopted as roadmap requirements"
+    }
+  },
+
+  "reproduced_checks": [
+    {"check": "F-SPLIT-1 bundle integrity", "command": "sha256sum -c SHA256SUMS", "cwd": "evidence/f_split_1_audit_bundle_20261009", "result": "3/3 OK", "label": "PROVEN"},
+    {"check": "Phase-3 readiness bundle integrity", "command": "sha256sum -c evidence/phase3_readiness/SHA256SUMS", "cwd": "repository root", "result": "6/6 OK", "label": "PROVEN"},
+    {"check": "Frozen instrument commit resolves", "command": "git cat-file -t 74e52eddff698919e5776d8b6cb1ee75dc3159f8", "result": "fatal: could not get object info", "label": "PROVEN"},
+    {"check": "Frozen tag resolves", "command": "git tag -l v4-benchmark-frozen", "result": "empty", "label": "PROVEN"},
+    {"check": "Frozen instrument digests vs tree", "command": "sha256sum <9 pinned files>", "result": "4 MATCH / 5 MISMATCH", "label": "PROVEN"},
+    {"check": "Weld gate test inventory", "command": "grep -c 'def test_' tests/test_am4_weld_gates.py", "result": "47", "label": "PROVEN"},
+    {"check": "Canonical stage order", "command": "read stages.py:1354-1365", "result": "exactly 10 stages", "label": "PROVEN"},
+    {"check": "G3 status ancestry", "command": "git merge-base --is-ancestor 07fad8c1 fc3e2c132", "result": "exit 0 (ancestor); 37 intervening commits", "label": "PROVEN"},
+    {"check": "AM-4-R3 record presence", "command": "grep -rn 'AM-4-R3' evidence/phases/P3_0_reinventory", "result": "no matches", "label": "PROVEN"},
+    {"check": "Compose hardening counts", "command": "grep -c healthcheck / read_only / user:", "result": "0 / 0 / 0; cap_add x5; depends_on x8", "label": "PROVEN"},
+    {"check": "Python versions", "command": ".venv/bin/python --version; python3 --version", "result": "3.12.15 / 3.14.4", "label": "PROVEN"},
+    {"check": "License presence", "command": "ls LICENSE* COPYING*; grep -n license pyproject.toml", "result": "none / none", "label": "PROVEN"},
+    {"check": "Lockfile presence", "command": "ls poetry.lock uv.lock Pipfile.lock constraints.txt", "result": "none", "label": "PROVEN"}
+  ],
+
+  "reported_unverified_suite_floors": [
+    {"value": 357, "source": "RAPHAEL_STATE.md:10"},
+    {"value": 369, "source": "evidence/g3_remediation/STATUS.md:23"},
+    {"value": 552, "source": "F2_PERIMETER_RECORD.md 001R6"},
+    {"value": 621, "source": "REVIEWER_GUIDE.md:28"},
+    {"value": 1218, "source": "RAPHAEL_BLOCKER_RESOLUTION_REPORT_2026-10-09.md"},
+    {"value": 1318, "source": "evidence/phase3_readiness/REMEDIATION_MANIFEST.json:13"}
+  ],
+  "authoritative_floor_at_head": null,
+
+  "external_research": [
+    {"package": "aiohttp", "installed": "3.14.3", "cve": "CVE-2026-69244", "fixed_in": "3.14.3", "affected": false, "source": "SUSE CVE-2026-69244; aio-libs GHSA-cq5v-8q36-5273"},
+    {"package": "aiohttp", "installed": "3.14.3", "cve": "CVE-2026-69243", "fixed_in": "3.14.2", "affected": false, "source": "NVD CVE-2026-69243; GHSA-mfx4-hv73-q22v"},
+    {"package": "aiohttp", "installed": "3.14.3", "cve": "CVE-2026-54275", "fixed_in": "3.14.1", "affected": false, "source": "NVD CVE-2026-54275"},
+    {"package": "aiohttp", "installed": "3.14.3", "cve": "CVE-2026-50269", "fixed_in": "3.14.0", "affected": false, "source": "NVD CVE-2026-50269"},
+    {"package": "aiohttp", "installed": "3.14.3", "cve": "CVE-2026-34993", "fixed_in": "3.14", "affected": false, "source": "GHSA-jg22-mg44-37j8"},
+    {"package": "starlette", "installed": "1.7.0", "cve": "CVE-2026-54283", "fixed_in": "1.3.1", "affected": false, "source": "NVD CVE-2026-54283; GHSA-82w8-qh3p-5jfq"},
+    {"package": "starlette", "installed": "1.7.0", "cve": "CVE-2026-48817", "fixed_in": "1.1.0", "affected": false, "source": "NVD CVE-2026-48817; GHSA-x746-7m8f-x49c"},
+    {"package": "starlette", "installed": "1.7.0", "cve": "CVE-2026-48710", "fixed_in": "1.0.1", "affected": false, "source": "NVD CVE-2026-48710 (CISA KEV)"},
+    {"package": "python-multipart", "installed": "0.0.32", "cve": "CVE-2024-53981", "fixed_in": "0.0.18", "affected": false, "source": "GHSA-59g5-xgcq-4qw3"}
+  ],
+  "external_research_coverage_limit": "Only aiohttp, starlette, python-multipart verified. torch, transformers, numpy, pandas, mcp, paramiko, cryptography, neo4j, pywinrm, requests, jinja2 remain UNKNOWN. No lockfile exists, so this is a point-in-time snapshot of one machine and not a substitute for a scheduled scan.",
+
+  "unknowns": [
+    "Whether the canonical Runtime import closure contains no second cognitive loop or bypass (static presence confirmed; exhaustive absence not proven)",
+    "Whether the 19 reported fresh-process import failures reproduce (imports not executed)",
+    "Runtime authentication behaviour of the 15 compose services",
+    "Audit-log append-only guarantee",
+    "Rate limits, retries, backoff, timeouts and cost-enforcement in the canonical Runtime",
+    "Shutdown and rollback procedures",
+    "Backup/restore and evidence retention policy",
+    "CVE status of 11 unverified packages",
+    "Performance of any component"
+  ],
+
+  "strengths_observed": [
+    "Both committed evidence bundles verify byte-exact (3/3 and 6/6) - reproducible by any reviewer",
+    "HOLDOUT_CLASSIFICATION_20261009.json is a model fail-closed governance artifact that withdrew its own prior unverifiable claim",
+    "Fail-closed semantics are explicit and consistent in measurement, holdout and policy-identity paths",
+    "All 18 published compose ports bound to 127.0.0.1",
+    "scripts/run_demo_d1.sh performs target identity verification, denial controls and artifact digest verification before declaring success",
+    "Canonical chain is present with exactly 10 stages and a named policy artifact (policies/bootstrap-v0.json)",
+    "The project's own reports state the blocked status accurately rather than claiming completion"
+  ],
+
+  "remediation_plan": {
+    "phase_a_stop_the_bleeding": [
+      {"id": "A1", "action": "Freeze further RSI-1 / P4-phase commits until G3 is ruled", "addresses": ["GOV-001"]},
+      {"id": "A2", "action": "Reconcile WELD_SET.md into one reviewed status table with one test count", "addresses": ["GOV-002"]},
+      {"id": "A3", "action": "Publish an AM-4-R3 execution record or a formal statement of the weld work's actual task ID, via explicit ADR", "addresses": ["GOV-002", "GOV-006"]},
+      {"id": "A4", "action": "Mark frozen-instrument block UNVERIFIABLE_DRIFT without rewriting the pinned anchor", "addresses": ["EVAL-001"]},
+      {"id": "A5", "action": "README truth-sync banner on Key Results", "addresses": ["EVAL-003"]}
+    ],
+    "phase_b_reproducibility_and_supply_chain": [
+      {"id": "B1", "action": "Commit a hashed lockfile; add upper bounds; install pip in .venv", "addresses": ["SEC-001"]},
+      {"id": "B2", "action": "Reconcile pyproject dependencies; fix packages.find include; resolve hyphenated service packages", "addresses": ["SEC-002", "SEC-006"]},
+      {"id": "B3", "action": "Add dependency scanning and SBOM generation to CI", "addresses": ["SEC-001"]},
+      {"id": "B4", "action": "Compose healthchecks, hardening, and fail-closed secrets", "addresses": ["SEC-004"]}
+    ],
+    "phase_c_governance_machinery": [
+      {"id": "C1", "action": "Implement governance_registry.py; seed six decisions as PROPOSED", "addresses": ["GOV-003"]},
+      {"id": "C2", "action": "Add src/arena/tests/conftest.py plus before/after sha256 manifest proof", "addresses": ["ARCH-002"]},
+      {"id": "C3", "action": "Add DR-002 and DR-003 to the defect register", "addresses": ["COR-001"]},
+      {"id": "C4", "action": "Regenerate or delete RAPHAEL_STATE.md; reconcile floor number; resolve duplicate ADR-011", "addresses": ["GOV-004", "GOV-005"]},
+      {"id": "C5", "action": "Implement snapshot origin binding", "addresses": ["EVAL-004"]},
+      {"id": "C6", "action": "Add manifest cross-block consistency validator and manifest-vs-HEAD digest re-verification to the configured suite", "addresses": ["EVAL-001", "EVAL-002"]}
+    ],
+    "phase_d_gate_submission": [
+      {"id": "D1", "action": "Assemble the G3 evidence package per AM-8 with one authoritative floor and an explicit scope-deviations field"},
+      {"id": "D2", "action": "Submit to GLM for roadmap 14.12 adversarial review and a G3 ruling"},
+      {"id": "D3", "action": "Only after G3 PASS: begin P4 under a new phase contract"}
+    ],
+    "phase_e_not_authorized": [
+      {"id": "E1", "action": "P5-P10, benchmark execution per proposed protocol, license/authorization posture"}
+    ]
+  },
+
+  "next_authorized_task": {
+    "task": "Prepare and submit the G3 gate package for architecture-authority adjudication, and obtain the G3 ruling. No further RSI or P10 work.",
+    "authorized_now": ["A1-A5", "C1-C3"],
+    "required_evidence": [
+      "Single internally consistent WELD_SET.md with one status table and one verified test count",
+      "Explicit ADR or amendment recording the true AM-4-R3 / weld status",
+      "One authoritative test floor with environment fingerprint (commit SHA, tree SHA, interpreter hash, pip freeze)",
+      "sha256 manifests proving arena/results/ and evidence/ byte-identical before/after configured suite and nested suite",
+      "governance_registry with six operator decisions as PROPOSED and none adopted",
+      "Manifest-vs-HEAD digest re-verification result and a documented decision on published effect sizes"
+    ],
+    "independent_review_owner": "GLM (architecture authority) for the G3 ruling; operator for ratification and legal/licensing decisions",
+    "acceptance_criteria": "Roadmap 14.11 eight MVP failure criteria demonstrated; roadmap 14.12 ten adversarial attack classes attempted and shown to fail per policy with traceable evidence",
+    "rollback": "All remediation commits are additive to evidence/, reports/, docs/ and src/orchestrator/rsi/; control plane untouched; the whole G3 package can be shelved on a branch"
+  },
+
+  "operator_decisions_required": [
+    "G3 ruling: accept / reject / conditional",
+    "Holdout: authorize provenance recovery outside this repository, or formally accept permanent UNVERIFIABLE",
+    "Frozen-instrument drift: do published README effect sizes stand, or are they withdrawn",
+    "22 historical split=validation call sites: per-site intent ruling (no mass rewrite)",
+    "Six PROPOSED governance decisions: holdout policy, require_policy_identity in adopted configs, denominator/exclusion semantics, adoption authority, statistical policy, snapshot/replay semantics",
+    "F-SPLIT-1 bundle transmission to independent reviewer; then adjudicate audit/f-split-1",
+    "License and authorized-use posture for RAPHAEL and for the offensive-capability modules and CVE PoC directory; third-party license inventory; acceptability of pywinrm-style privileged remote execution",
+    "Performance: approve or amend the proposed benchmark protocol and provisional thresholds",
+    "CI: bind the configured suite to a real runner (GitLab CI vs Jenkins vs GitHub Actions)"
+  ]
+}

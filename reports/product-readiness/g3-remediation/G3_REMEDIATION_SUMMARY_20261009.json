@@ -1,0 +1,335 @@
+{
+  "schema_version": "1.0",
+  "artifact_type": "non_authoritative_remediation_evidence_package",
+  "disclaimer": "This package records evidence and remediation. It does not accept or rule on any gate, ratify any operator decision, or authorize any phase. G3 remains NOT ACCEPTED.",
+  "task": {
+    "name": "G3 remediation and evidence closure",
+    "date_utc": "2026-10-09",
+    "authorized_scope": ["A1", "A2", "A3", "A4", "A5", "C1", "C2", "C3"],
+    "explicitly_out_of_scope": ["B1", "B2", "B3", "B4", "C4", "C5", "C6", "P4", "P5", "P10", "full-suite run", "benchmarks", "network", "docker stack"],
+    "actions_not_taken": ["commit", "push", "merge", "sign", "ratify", "release", "promote", "deploy"]
+  },
+
+  "baseline": {
+    "verified_before_any_edit": true,
+    "divergence_detected": false,
+    "root": "/home/yaser/external-audits/raphael-2",
+    "branch": "governance/rsi-1-provenance-correction",
+    "head_sha": "fc3e2c132591eab7edaa12e97e13fe2d01619411",
+    "tree_sha": "e24d42bf7f7655293f3eb3a273c9ce4d94b1e061",
+    "commit_count": 188,
+    "remotes": ["origin", "canonical", "audit-target"],
+    "linked_worktrees_at_start": 3,
+    "tracked_modifications_at_start": 0,
+    "staged_modifications_at_start": 0,
+    "untracked_at_start": [
+      "RAPHAEL_RSI1_INDEPENDENT_AUDIT_FC3E2C132.md",
+      "reports/product-readiness/"
+    ],
+    "stashes_present_untouched": 9,
+    "final_head_sha": "fc3e2c132591eab7edaa12e97e13fe2d01619411",
+    "final_tree_sha": "e24d42bf7f7655293f3eb3a273c9ce4d94b1e061",
+    "head_unchanged": true
+  },
+
+  "superseding_ruling_check": {
+    "searched_for_newer_governance_ruling": true,
+    "found": false,
+    "evidence": [
+      "git log --all --grep=ACCEPT -i surfaces no gate acceptance",
+      "docs/adr/ contained no ADR addressing AM-4-R3 or G3 acceptance before this task",
+      "roadmap Appendix D state therefore stands: AM-4-R3 NOT EXECUTED, G3 BLOCKED, RSI NOT STARTED"
+    ]
+  },
+
+  "changes": {
+    "files_modified": [
+      {"item": "A5", "path": "README.md", "rationale": "verification-status banner, reproduction-step warning, Key Results provenance warning; scoped to affected claims only"},
+      {"item": "C3", "path": "evidence/DEFECT_REGISTER.md", "rationale": "added DR-002 (F1) and DR-003 (F4) with source grounding and closure conditions"},
+      {"item": "A2", "path": "evidence/phases/P3_0_reinventory/WELD_SET.md", "rationale": "removed stale duplicated status section; added five-state reading guide; de-ambiguated ALL-15-WELDED vs owed P9 deletion ruling"}
+    ],
+    "files_created": [
+      {"item": "A1", "path": "evidence/governance/P4_RSI_FREEZE_NOTICE_20261009.md", "lines": 95},
+      {"item": "A3", "path": "docs/adr/ADR-013-am4-r3-status-and-precedence-conflict.md", "lines": 180},
+      {"item": "A4", "path": "evidence/frozen_instrument_drift/UNVERIFIABLE_DRIFT_20261009.md", "lines": 174},
+      {"item": "A4", "path": "evidence/frozen_instrument_drift/UNVERIFIABLE_DRIFT_20261009.json", "lines": 169},
+      {"item": "C1", "path": "src/orchestrator/rsi/governance_registry.py", "lines": 461},
+      {"item": "C1", "path": "evidence/GOVERNANCE_DECISIONS_20261009.jsonl", "records": 6},
+      {"item": "C1", "path": "scripts/gen_governance_decision_seeds.py", "lines": 201},
+      {"item": "C1", "path": "tests/test_rsi1_governance_registry.py", "lines": 318},
+      {"item": "C1", "path": "tests/test_rsi1_governance_registry_adversarial.py", "lines": 244},
+      {"item": "C2", "path": "src/arena/tests/conftest.py", "lines": 144}
+    ],
+    "counts": {"modified": 3, "created": 10},
+    "untouched_by_design": [
+      "evaluations/campaign/rbs_v4_reproducibility_manifest.json (the pinned anchor)",
+      "src/orchestrator/rsi/evaluation_gate.py",
+      "src/orchestrator/runtime/", "src/orchestrator/brain/capability_broker.py", "src/orchestrator/exec/",
+      "tests/ (pre-existing files)", "arena/results/**", "src/arena/results/**"
+    ]
+  },
+
+  "items": {
+    "A1": {
+      "status": "IMPLEMENTED",
+      "deliverable": "evidence/governance/P4_RSI_FREEZE_NOTICE_20261009.md",
+      "enforcement_subsystem_added": false,
+      "why_not": "A CI gate or pre-commit hook would create a new governed enforcement surface; the task explicitly forbade a broad new enforcement subsystem without approval. A documented human review procedure stands in its place."
+    },
+    "A2": {
+      "status": "IMPLEMENTED",
+      "file": "evidence/phases/P3_0_reinventory/WELD_SET.md",
+      "removed": "stale duplicated 'Post-weld status' section (claimed 26 tests, empty status table)",
+      "retained": "superseded text remains in git history; not erased",
+      "added": "five-state reading guide: code present / tests present / tests executed / independent review / gate accepted",
+      "test_function_count": {"value": 47, "label": "PROVEN", "basis": "static count only"},
+      "explicit_warning_in_file": "a count of 47 test functions is not evidence that 47 tests ran, passed, or were reviewed",
+      "not_resolved": "78-file census relabelling inconsistency between U-3 and F2_PERIMETER_RECORD 001R6 - referred to authority, no evidence available to decide"
+    },
+    "A3": {
+      "status": "IMPLEMENTED",
+      "file": "docs/adr/ADR-013-am4-r3-status-and-precedence-conflict.md",
+      "adr_number": 13,
+      "adr_collision_check_performed": true,
+      "adr_011_collision": {
+        "detected": true,
+        "files": ["docs/adr/ADR-011-arena-clause-addendum.md", "docs/adr/ADR-011-sandbox-layer-mechanisms-not-authorization.md"],
+        "textual_references": 68,
+        "action_taken": "none - referred, not fixed",
+        "reason": "renumbering 68 references is a wider change than this scope permits; renaming either file would silently redirect existing references"
+      },
+      "am4_r3_status_recorded": "NOT EXECUTED (retained unchanged)",
+      "work_relabelled_as_am4_r3": false,
+      "execution_record_invented": false,
+      "precedence_applied": "roadmap Appendix E - level 2 (roadmap) outranks level 5 (repository evidence)"
+    },
+    "A4": {
+      "status": "IMPLEMENTED",
+      "classification": "UNVERIFIABLE_DRIFT",
+      "files": ["evidence/frozen_instrument_drift/UNVERIFIABLE_DRIFT_20261009.md", "evidence/frozen_instrument_drift/UNVERIFIABLE_DRIFT_20261009.json"],
+      "anchor_modified": false,
+      "anchor_digest_pinned": "c26ed773ba57d43d53e150acb90db8299aa565f9ea7b2646a7820aa2c9775757",
+      "anchor_measured_digest": "c26ed773ba57d43d53e150acb90db8299aa565f9ea7b2646a7820aa2c9775757",
+      "anchor_intact": true,
+      "drift_scope": "the manifest's frozen_instrument block only, NOT the anchor file's own bytes",
+      "declared_commit_present": false,
+      "declared_tag_present": false,
+      "digest_match": 4,
+      "digest_mismatch": 5,
+      "canonical_pdp_drifted": true,
+      "canonical_pdp_file": "src/orchestrator/brain/capability_broker.py",
+      "results_claimed_incorrect": false,
+      "results_claimed_unverifiable": true
+    },
+    "A5": {
+      "status": "IMPLEMENTED",
+      "file": "README.md",
+      "affected_claims_labelled": ["RBS-v4 Terminal Holdout description", "Reproduction Steps code block", "Key Results table"],
+      "disclaimer_scoped_to_affected_claims_only": true,
+      "implies_all_functionality_failed": false,
+      "historical_figures_deleted": false,
+      "historical_figures_retained_with_provenance": true
+    },
+    "C1": {
+      "status": "IMPLEMENTED + PROVEN",
+      "module": "src/orchestrator/rsi/governance_registry.py",
+      "tests": {
+        "unit": {"file": "tests/test_rsi1_governance_registry.py", "count": 40},
+        "adversarial": {"file": "tests/test_rsi1_governance_registry_adversarial.py", "count": 17},
+        "total_passed": 57,
+        "label": "PROVEN"
+      },
+      "states": ["PROPOSED", "ADOPTED", "REJECTED", "SUPERSEDED"],
+      "properties_enforced": [
+        "PROPOSED has no authority effect",
+        "PROPOSED may not carry authority_principal or decided_at (unrepresentable, not merely discouraged)",
+        "ADOPTED requires a named authority distinct from the proposer",
+        "first ledger entry must be PROPOSED",
+        "illegal transitions refused (closed transition table)",
+        "duplicate and conflicting records refused",
+        "content hash re-derived on every load; mismatch aborts the whole import",
+        "history never truncated; prior versions keep their original hash"
+      ],
+      "append_only_claim": "append-only by API surface only; NOT by cryptographic chaining; no hash chain, no signature, no notarisation - stated honestly in the module docstring",
+      "seeds": {
+        "file": "evidence/GOVERNANCE_DECISIONS_20261009.jsonl",
+        "count": 6,
+        "generator": "scripts/gen_governance_decision_seeds.py",
+        "deterministic": true,
+        "all_status_proposed": true,
+        "authority_principal_empty": true,
+        "decided_at_empty": true,
+        "adopted_count": 0,
+        "ids": ["GD-2026-10-09-01", "GD-2026-10-09-02", "GD-2026-10-09-03", "GD-2026-10-09-04", "GD-2026-10-09-05", "GD-2026-10-09-06"]
+      },
+      "options_absent_from_source": ["GD-2026-10-09-04", "GD-2026-10-09-05", "GD-2026-10-09-06"],
+      "options_absent_handling": "recorded as '<no option set established by the source records>' rather than inventing options",
+      "decisions_adopted": 0
+    },
+    "C2": {
+      "status": "IMPLEMENTED + PROVEN",
+      "file": "src/arena/tests/conftest.py",
+      "layers": ["prevention: autouse fixture redirects arena.ablation_runner.RESULTS_BASE to tmp_path", "detection: session-scoped fingerprint of protected trees, fails session on any change"],
+      "fingerprint_method": "(size, mtime_ns) per file - catches same-length rewrites, fast over ~58k artifacts",
+      "protected_trees": ["arena/results", "src/arena/results", "src/arena/arena/results", "evidence"],
+      "validated_in_disposable_worktree": true,
+      "worktree_path": "/home/yaser/audit-rsi1/g3-verify-wt",
+      "worktree_removed_afterwards": true,
+      "worktree_list_restored": true,
+      "preexisting_stale_worktree_untouched": "/tmp/rbase-b6ef24",
+      "protected_files_hashed": 58929,
+      "before_manifest_sha256": "aea6970c2dcde9ca07b53d95ea7078dfceb92bc9a6bb4363d7a7b119cde725a6",
+      "after_manifest_sha256": "aea6970c2dcde9ca07b53d95ea7078dfceb92bc9a6bb4363d7a7b119cde725a6",
+      "diff_line_count": 0,
+      "worktree_git_status_after_run": ["?? src/arena/tests/conftest.py"],
+      "negative_control": {
+        "performed": true,
+        "purpose": "prove the check detects modification rather than merely reporting a green run",
+        "planted_path": "arena/results/raw/_G3_GUARD_NEGATIVE_CONTROL/planted.jsonl",
+        "result": "test passed (1 passed) but session errored; guard named the exact planted path",
+        "label": "PROVEN"
+      },
+      "nested_suite_outcome": {
+        "passed": 69,
+        "failed": 4,
+        "guard_error": 0,
+        "failures_cause": "pre-existing legacy failures in test_evaluator_robustness.py / test_runconclusion.py",
+        "failures_caused_by_this_task": false,
+        "label": "REPORTED as to cause; not claimed as fixed"
+      }
+    },
+    "C3": {
+      "status": "IMPLEMENTED",
+      "file": "evidence/DEFECT_REGISTER.md",
+      "entries_added": ["DR-002", "DR-003"],
+      "both_status": "DEFERRED",
+      "source_record": "reports/RAPHAEL_BLOCKER_RESOLUTION_REPORT_2026-10-09.md section 5 item 7 (lines 339-344)",
+      "DR-002": {
+        "title": "second pinned-anchor read",
+        "code_grounding": ["evaluation_gate.py:1285 load_authoritative_anchor", "evaluation_gate.py:2085-2093 one-observation docstring", "evaluation_gate.py:1482 public verify_authoritative_holdout"],
+        "impact": "fail-closed refusal, not mis-authorisation",
+        "closure_conditions": 3,
+        "uncertainty_retained": "whether an existing test already pins one-observation purity across operations is UNKNOWN; no test was executed"
+      },
+      "DR-003": {
+        "title": "schema v2 spans old and new evaluator-identity digest semantics",
+        "code_grounding": ["evaluation_gate.py:47 SCHEMA_VERSION = 2", "evaluation_gate.py:281-287 is_placeholder", "evaluation_gate.py:202-205 _is_hex_sha256", "evaluation_gate.py:2113-2122 three-path refusal gate"],
+        "impact": "schema hygiene; no authority-granting path opened",
+        "closure_conditions": 3,
+        "uncertainty_retained": "whether any consumer distinguishes the refusal reasons is UNKNOWN"
+      },
+      "technical_details_invented": false
+    }
+  },
+
+  "protected_evidence": {
+    "scope": "all git-tracked files",
+    "files_hashed": 67641,
+    "excluded": {
+      "paths": ["cai_service", "cloak_service", "mcp_hub", "mhddos_service"],
+      "reason": "broken symlinks; unreadable; excluded identically from before and after manifests",
+      "pre_existing": true,
+      "in_scope": false
+    },
+    "before_manifest": "hashes/BEFORE_protected.sha256",
+    "before_manifest_sha256": "5a672359b52c0a005ca9a63fef8311e989f786e079b1dbf8b8db02f63bc0f384",
+    "after_manifest": "hashes/AFTER_all_tracked.sha256",
+    "delta_file": "hashes/DELTA_tracked.txt",
+    "delta_line_count": 12,
+    "changed_files": 3,
+    "added_files": 0,
+    "deleted_files": 0,
+    "byte_identical_count": 67638,
+    "changed_file_list": ["README.md", "evidence/DEFECT_REGISTER.md", "evidence/phases/P3_0_reinventory/WELD_SET.md"],
+    "changed_files_all_authorized": true,
+    "note": "evidence/DEFECT_REGISTER.md is both a protected-path file and an intentionally changed authorized deliverable (C3); called out rather than averaged into the clean figure",
+    "historical_evidence_byte_identical": true,
+    "historical_evidence_qualifier": "except the one authorized DEFECT_REGISTER.md modification"
+  },
+
+  "validation": {
+    "commands": [
+      {"command": "git cat-file -t 74e52edd...", "result": "fatal: could not get object info", "label": "PROVEN"},
+      {"command": "git tag -l v4-benchmark-frozen", "result": "no output", "label": "PROVEN"},
+      {"command": "sha256sum evaluations/campaign/rbs_v4_reproducibility_manifest.json", "result": "c26ed773... matches pinned anchor digest", "label": "PROVEN"},
+      {"command": "PYTHONPATH=src .venv/bin/python -m pytest tests/test_rsi1_governance_registry.py tests/test_rsi1_governance_registry_adversarial.py -q --no-header", "result": "57 passed in 0.97s", "label": "PROVEN"},
+      {"command": "PYTHONPATH=src .venv/bin/python scripts/gen_governance_decision_seeds.py", "result": "6 records, 0 authoritative; deterministic on re-run (identical output)", "label": "PROVEN"},
+      {"command": "nested suite in disposable worktree", "result": "4 failed, 69 passed; 0 guard errors; protected manifest byte-identical", "label": "PROVEN for isolation"},
+      {"command": "negative control run", "result": "1 passed, 1 error; guard named the planted path", "label": "PROVEN"},
+      {"command": "git diff --check", "result": "no output (clean)", "label": "PROVEN"},
+      {"command": ".venv/bin/python -m py_compile <5 new python files>", "result": "PY_COMPILE_OK", "label": "PROVEN"},
+      {"command": ".venv/bin/python -m json.tool <2 json files>", "result": "JSON_OK", "label": "PROVEN"},
+      {"command": "PYTHONPATH=src .venv/bin/python -m pytest tests/ --collect-only -q", "result": "1509 tests collected in 12.32s", "label": "COLLECTION ONLY - not a pass claim"}
+    ],
+    "full_suite_run": false,
+    "full_suite_reason": "outside authorized scope; also required to reconcile six mutually inconsistent floor figures, which needs authority",
+    "benchmarks_run": false,
+    "benchmarks_reason": "explicitly not authorized in this task",
+    "known_inconsistent_floor_figures": [357, 369, 552, 621, 1218, 1318],
+    "authoritative_floor_at_head": null
+  },
+
+  "g3_submission_checklist": [
+    {"criterion": "14.1-14.9 weld implementation", "status": "recorded", "label": "REPORTED"},
+    {"criterion": "14.8 static guardrail", "status": "present", "label": "IMPLEMENTED"},
+    {"criterion": "14.9 dynamic bypass tests - functions present (47)", "status": "present", "label": "PROVEN"},
+    {"criterion": "14.9 dynamic bypass tests - executed and passing", "status": "not established", "label": "UNKNOWN"},
+    {"criterion": "14.10 native sandbox + safe capability", "status": "present", "label": "IMPLEMENTED"},
+    {"criterion": "14.11 MVP demonstration", "status": "present", "label": "IMPLEMENTED"},
+    {"criterion": "14.11 eight failure criteria", "status": "not established", "label": "UNKNOWN"},
+    {"criterion": "14.12 GLM adversarial review", "status": "NOT PERFORMED", "label": "PROVEN (absence)"},
+    {"criterion": "AM-4-R3 execution record", "status": "ABSENT", "label": "PROVEN (absence)"},
+    {"criterion": "AM-4-R3 vs weld records conflict", "status": "recorded and referred", "label": "IMPLEMENTED"},
+    {"criterion": "frozen-instrument attribution", "status": "UNVERIFIABLE_DRIFT recorded", "label": "PROVEN"},
+    {"criterion": "holdout dataset", "status": "UNVERIFIABLE / MISSING", "label": "PROVEN"},
+    {"criterion": "nested-suite contamination path", "status": "closed with negative control", "label": "PROVEN"},
+    {"criterion": "operator decision authority", "status": "mechanism exists; 6 decisions PROPOSED", "label": "PROVEN"},
+    {"criterion": "G3 gate acceptance", "status": "NOT ACCEPTED", "label": "PROVEN (absence of ruling)"},
+    {"criterion": "P10 admission", "status": "0 of 10 fields; not entered", "label": "PROVEN"}
+  ],
+
+  "submission_readiness": {
+    "ready_to_submit_to_glm": false,
+    "blockers_in_order": [
+      "Supply or rule on AM-4-R3 (ADR-013 section 5)",
+      "Rule on the 78-file census inconsistency (ADR-013 section 5 item 3)",
+      "Decide the README effect-size question (drift record section 5)"
+    ],
+    "recommended_first_action_for_glm": "perform the roadmap 14.12 adversarial review - ten named attack classes have never been attempted",
+    "still_missing": "one authoritative test floor number with environment fingerprint (required by AM-8; needs a full-suite run, out of scope here)"
+  },
+
+  "unresolved_requiring_authority": [
+    {"id": "Q1", "question": "Supply the AM-4-R3 task packet, or rule that the AM-4-R2 weld work discharges it", "authority": "operator + GLM"},
+    {"id": "Q2", "question": "G3 ruling", "authority": "GLM"},
+    {"id": "Q3", "question": "78-file census relabelling inconsistency (WELD_SET U-3 vs F2_PERIMETER_RECORD 001R6)", "authority": "GLM"},
+    {"id": "Q4", "question": "P9 deletion ruling for gated library code (D-1)", "authority": "GLM + operator"},
+    {"id": "Q5", "question": "Ratify or reject the six PROPOSED decisions", "authority": "operator"},
+    {"id": "Q6", "question": "Do the published README effect sizes stand, or are they withdrawn?", "authority": "operator + GLM"},
+    {"id": "Q7", "question": "ADR-011 collision disambiguation (68 references)", "authority": "GLM"},
+    {"id": "Q8", "question": "License / authorized-use posture for offensive-capability modules", "authority": "operator"},
+    {"id": "Q9", "question": "DR-002 / DR-003 closure conditions", "authority": "GLM"}
+  ],
+
+  "scope_deviations": {
+    "count": 0,
+    "additions_within_scope": [
+      "scripts/gen_governance_decision_seeds.py - seeds generated so content hashes are provably correct rather than hand-typed; can emit PROPOSED only",
+      "disposable git worktree created and removed for the C2 proof; git worktree list verified restored to its original three entries"
+    ],
+    "self_correction": "an early git ls-files invocation lost a shell variable to PowerShell, producing a BEFORE manifest over all tracked files rather than the intended protected subset. The AFTER manifest was regenerated at identical all-tracked scope so the comparison is valid. Flagged because a mismatched-scope before/after comparison would otherwise have appeared as 'no changes at all'."
+  },
+
+  "final_state": {
+    "head_sha": "fc3e2c132591eab7edaa12e97e13fe2d01619411",
+    "tree_sha": "e24d42bf7f7655293f3eb3a273c9ce4d94b1e061",
+    "working_tree": "modified - 3 tracked files modified, 10 files/dirs untracked (this task's output)",
+    "committed": false,
+    "pushed": false,
+    "g3_accepted": false,
+    "p4_authorized": false,
+    "p10_entered": false,
+    "operator_decisions_adopted": 0,
+    "freeze_notice": "evidence/governance/P4_RSI_FREEZE_NOTICE_20261009.md (ACTIVE)"
+  }
+}

@@ -1,0 +1,169 @@
+{
+  "record_type": "non_authoritative_drift_adjudication_record",
+  "record_status": "RECORDED_PENDING_AUTHORITY_DECISION",
+  "classification": "UNVERIFIABLE_DRIFT",
+  "scope_claim": "The manifest's `frozen_instrument` block only. NOT the anchor file's own bytes.",
+  "date": "2026-10-09",
+  "author": "G3 remediation task (engineering); no authority exercised",
+  "source_revision": {
+    "branch": "governance/rsi-1-provenance-correction",
+    "head_sha": "fc3e2c132591eab7edaa12e97e13fe2d01619411",
+    "tree_sha": "e24d42bf7f7655293f3eb3a273c9ce4d94b1e061"
+  },
+
+  "anchor": {
+    "file": "evaluations/campaign/rbs_v4_reproducibility_manifest.json",
+    "pinned_by": "src/orchestrator/rsi/evaluation_gate.py:174-178 (AUTHORITATIVE_ANCHORS.holdout_anchor_sha256)",
+    "pinned_sha256": "c26ed773ba57d43d53e150acb90db8299aa565f9ea7b2646a7820aa2c9775757",
+    "measured_sha256": "c26ed773ba57d43d53e150acb90db8299aa565f9ea7b2646a7820aa2c9775757",
+    "bytes_match_pinned_digest": true,
+    "anchor_modified_by_this_task": false,
+    "note": "The anchor's own tamper-evidence chain is INTACT and still verifies. This record does not weaken, replace, or repair it. Editing the manifest would make load_authoritative_anchor() return HOLDOUT_ANCHOR_TAMPERED; that behaviour is deliberately left in force."
+  },
+
+  "drift_subject": {
+    "manifest_block": "frozen_instrument",
+    "declared_commit": "74e52eddff698919e5776d8b6cb1ee75dc3159f8",
+    "declared_tag": "v4-benchmark-frozen",
+    "declared_files_in_manifest": 9,
+    "declared_manifest_file": "evaluations/campaign/rbs_v4_benchmark_frozen-F.json",
+    "declared_manifest_file_present": true
+  },
+
+  "reproduction": {
+    "environment": "read-only git and sha256sum; no repository file was modified to produce this record",
+    "commands": [
+      {
+        "id": "R1",
+        "command": "git cat-file -t 74e52eddff698919e5776d8b6cb1ee75dc3159f8",
+        "cwd": "<repo root>",
+        "exit_code": 128,
+        "stdout": "",
+        "stderr": "fatal: git cat-file: could not get object info",
+        "conclusion": "declared_commit ABSENT from the object database of this repository (and of every ref in it)"
+      },
+      {
+        "id": "R2",
+        "command": "git tag -l v4-benchmark-frozen",
+        "cwd": "<repo root>",
+        "exit_code": 0,
+        "stdout": "(no output)",
+        "conclusion": "declared_tag ABSENT"
+      },
+      {
+        "id": "R3",
+        "command": "sha256sum evaluations/campaign/rbs_v4_reproducibility_manifest.json",
+        "cwd": "<repo root>",
+        "exit_code": 0,
+        "stdout": "c26ed773ba57d43d53e150acb90db8299aa565f9ea7b2646a7820aa2c9775757  evaluations/campaign/rbs_v4_reproducibility_manifest.json",
+        "conclusion": "anchor bytes match the digest pinned in evaluation_gate.py"
+      },
+      {
+        "id": "R4",
+        "command": "sha256sum src/arena/d6_manifest.py src/arena/environment.py src/arena/ablation_runner.py src/orchestrator/brain/action.py src/orchestrator/student/stack_matcher.py src/orchestrator/brain/capability_broker.py src/orchestrator/brain/candidate_generators/student_generator.py src/arena/ablation.py src/arena/runner.py",
+        "cwd": "<repo root>",
+        "exit_code": 0,
+        "conclusion": "5 of 9 pinned digests MISMATCH (see digest_comparison)"
+      }
+    ]
+  },
+
+  "digest_comparison": [
+    {
+      "file": "src/arena/d6_manifest.py",
+      "manifest_sha256": "1059bb342c3b13e8c9dde613b0c44f3a94063ce15f324fb0b762de0f468fa984",
+      "observed_sha256": "1059bb342c3b13e8c9dde613b0c44f3a94063ce15f324fb0b762de0f468fa984",
+      "result": "MATCH"
+    },
+    {
+      "file": "src/arena/environment.py",
+      "manifest_sha256": "a12f7c42ea02e44a7dbe2c0b28f5c48f6d98a70706da893e024b11009917c694",
+      "observed_sha256": "c9d3b2b13ef119790b2af3222b735461fa7add25043067169a604017283468fa",
+      "result": "MISMATCH"
+    },
+    {
+      "file": "src/arena/ablation_runner.py",
+      "manifest_sha256": "22a4617cbca1dbde6da00d247e5c4ade53346397b98f91e018866537d89ff3ea",
+      "observed_sha256": "f016e20cd2cafb60a9b62d1129ca3923b37e19faee4e368d891f88da1114ff94",
+      "result": "MISMATCH"
+    },
+    {
+      "file": "src/orchestrator/brain/action.py",
+      "manifest_sha256": "e3e8cdba55d78a6a2509fd3fdd0593b710956582ce6d827e32d87867274d49de",
+      "observed_sha256": "c450595eac0784a0be996a8314991448013a4239aeda2623d06929e06cd96781",
+      "result": "MISMATCH"
+    },
+    {
+      "file": "src/orchestrator/student/stack_matcher.py",
+      "manifest_sha256": "de67061bf08c3bf047453cf3864469db5c2b73aa772f2cf8ce2fb35d222dd39e",
+      "observed_sha256": "de67061bf08c3bf047453cf3864469db5c2b73aa772f2cf8ce2fb35d222dd39e",
+      "result": "MATCH"
+    },
+    {
+      "file": "src/orchestrator/brain/capability_broker.py",
+      "manifest_sha256": "0906db747ecbe9ea15ca2076c2059d5b270a19239b63cf1d16888450cf0f30d0",
+      "observed_sha256": "8e0603be4630ae2a34751d57e00db9734fceb9748cb56f552ba395e9db8d58b2",
+      "result": "MISMATCH",
+      "note": "This is the canonical PDP. Its drift means any authorization semantics claimed by the historical campaign are not attributable to today's broker code."
+    },
+    {
+      "file": "src/orchestrator/brain/candidate_generators/student_generator.py",
+      "manifest_sha256": "22282327d4ea9cf1a1c063980405b5f19c6517752c01d883fbdc58624c307b12",
+      "observed_sha256": "22282327d4ea9cf1a1c063980405b5f19c6517752c01d883fbdc58624c307b12",
+      "result": "MATCH"
+    },
+    {
+      "file": "src/arena/ablation.py",
+      "manifest_sha256": "678c997aec7685f6df7cdd017dac997ceb656a88221a6e4c43e8f30244c6095c",
+      "observed_sha256": "5eb4a8530f5f9a5528df36dd72ba210094bb96a2e4342a15c0a10e4e6f1d084d",
+      "result": "MISMATCH"
+    },
+    {
+      "file": "src/arena/runner.py",
+      "manifest_sha256": "9f1bb10897f5ed614b356bb91d07024b40e3a753a24638b234b6642362a16e20",
+      "observed_sha256": "9f1bb10897f5ed614b356bb91d07024b40e3a753a24638b234b6642362a16e20",
+      "result": "MATCH"
+    }
+  ],
+
+  "summary_counts": {"match": 4, "mismatch": 5, "total": 9},
+
+  "secondary_internal_inconsistency": {
+    "status": "REPORTED, NOT independently re-derived by this task",
+    "source": "reports/RAPHAEL_BLOCKER_RESOLUTION_REPORT_2026-10-09.md:189-199",
+    "note": "The manifest's dataset block (1200 rows, Aug-7 window, sha256 2bf614f8...), design block (3240 runs, seeds 1072-1101), model_provider (gpt-oss:20b-cloud), reproducibility_command (run_rbs_v4_holdout.py) and verification gate (3240 rows, run 2026-08-05T23:23:13Z) describe two different campaigns. Recorded here as a cross-reference only; adjudicating it is a separate matter from the digest drift."
+  },
+
+  "consequences_for_attribution": [
+    "The instrument that produced the cited campaign results cannot be reconstructed from this repository: neither the declared commit nor the declared tag resolves here.",
+    "Five of nine instrument components, including the canonical CapabilityBroker (PDP), differ from the pinned bytes.",
+    "Consequently the published effect sizes in README.md cannot presently be attributed to code that exists in this tree. This is a statement about verifiability, NOT a claim that the historical measurements were wrong.",
+    "load_authoritative_holdout() remains fail-closed: the canonical holdout JSONL is absent, so it returns HOLDOUT_MISSING regardless of this drift. This record does not change any gate outcome."
+  ],
+
+  "explicitly_not_done": [
+    "The pinned anchor was NOT edited, re-pinned, or regenerated.",
+    "No digest was updated to match the current checkout.",
+    "No historical campaign was re-run and no result was regenerated.",
+    "No published effect size was deleted or replaced.",
+    "No gate status was changed.",
+    "No operator decision was taken."
+  ],
+
+  "decision_required": {
+    "authority": "operator and/or GLM (architecture authority)",
+    "question_1": "Do the published README effect sizes stand as historical claims with an unverifiable instrument, or are they formally withdrawn?",
+    "question_2": "Should the frozen_instrument block be classified permanently UNVERIFIABLE_DRIFT, or should provenance recovery be authorized from outside this repository?",
+    "question_3": "If the block is ever to be changed, that change requires a separate, explicitly reviewed commit and a corresponding update to AUTHORITATIVE_ANCHORS - neither is in scope for this task.",
+    "engineering_recommendation": "None is binding. Engineering records the evidence; the authority decides."
+  },
+
+  "labels": {
+    "digest_mismatch": "PROVEN",
+    "commit_absent": "PROVEN",
+    "tag_absent": "PROVEN",
+    "anchor_bytes_intact": "PROVEN",
+    "historical_results_incorrect": "NOT CLAIMED - evidence does not establish this",
+    "gate_outcome_changed": false
+  }
+}
